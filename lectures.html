@@ -757,7 +757,23 @@
       .desktop-nav { display: none; }
       .hamburger { display: flex; }
     }
-  
+
+    /* ===== COHORT TABS ===== */
+    .cohort-tabs { display: flex; gap: 28px; margin-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .cohort-tab {
+      background: none; border: none; cursor: pointer;
+      color: #64748b; font-size: 1rem; font-weight: 700;
+      padding: 10px 2px 14px; position: relative;
+      font-family: inherit; transition: color 0.2s;
+    }
+    .cohort-tab:hover { color: #cbd5e1; }
+    .cohort-tab.active { color: #fff; }
+    .cohort-tab.active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -1px;
+      height: 2px; background: #a5b4fc; border-radius: 2px;
+    }
+    .cohort-panel { display: none; }
+    .cohort-panel.active { display: block; }
 
   </style>
 </head>
@@ -798,13 +814,25 @@
 
 <section class="program-sections" id="programs">
 
-  <!-- BI-WEEKLY -->
+  <!-- WEEKLY -->
   <div class="section-block">
     <div class="section-header">
-      <span class="section-chip">Bi-Weekly Sessions</span>
+      <span class="section-chip">Weekly Sessions</span>
       <h2 class="section-title">8 Lecture Series</h2>
-      <p class="section-desc">The Bi-Weekly Lecture series introduce participants to semiconductor and quantum technologies through a semester-long series of sessions, where every lecture is followed by hands-on activities to reinforce learning. Starting with an orientation, participants progressively explore vacuum processes, plasma processing, photolithography, and gold plating on the semiconductor side, then transition into laser-based measurements, quantum optics, the double-slit experiment, and quantum cryptography. This lecture series is currently being delivered to the first cohort of 20 participants from the Syracuse City School District Adult Education Center. We extend a special thanks to Dr. John P. Iorio, Director of the SCSD Adult Education Department, as well as SCSD Adult Education staff members Janet, Paul, and Jasenko, for their continued support of the Q-SUCCEED-CNY program.</p>
     </div>
+
+    <!-- COHORT TABS -->
+    <div class="cohort-tabs">
+      <button class="cohort-tab active" data-cohort="spring" onclick="switchCohort('spring')">Spring 2026</button>
+      <button class="cohort-tab" data-cohort="fall" onclick="switchCohort('fall')">Fall 2026</button>
+    </div>
+  </div>
+
+  <!-- ===================== SPRING 2026 PANEL ===================== -->
+  <div class="cohort-panel active" id="panel-spring">
+
+  <div class="section-block">
+    <p class="section-desc" style="margin-bottom:32px;">The Weekly Lecture series introduce participants to semiconductor and quantum technologies through a semester-long series of sessions, where every lecture is followed by hands-on activities to reinforce learning. Starting with an orientation, participants progressively explore vacuum processes, plasma processing, photolithography, and gold plating on the semiconductor side, then transition into laser-based measurements, quantum optics, the double-slit experiment, and quantum cryptography. This lecture series was conducted in Spring 2026 with the first cohort of 20 participants from the Syracuse City School District Adult Education Center. We extend a special thanks to Dr. John P. Iorio, Director of the SCSD Adult Education Department, as well as SCSD Adult Education staff members Janet Staub, Paul Worden, and Jasenko Mondom, for their continued support of the Q-SUCCEED-CNY program.</p>
     <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
 
       <!-- Lecture 1 -->
@@ -936,7 +964,7 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
   <div class="section-block">
     <div class="section-header">
       <span class="section-chip">Field Trip</span>
-      <h2 class="section-title">Inside the Ecosystem</h2>
+      <h2 class="section-title">Cornell Cleanroom Visit</h2>
       <p class="section-desc">A hands-on visit to one of the nation's leading nanofabrication facilities experiencing cleanroom culture, wafer processing, and the precision behind microchip manufacturing.</p>
     </div>
 
@@ -1220,6 +1248,56 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
     </div>
   </div>
 
+  </div>
+  <!-- =================== END SPRING 2026 PANEL =================== -->
+
+  <!-- ====================== FALL 2026 PANEL ====================== -->
+  <div class="cohort-panel" id="panel-fall">
+
+    <!-- Placeholder lecture grid — same 8-topic structure, same card size, no photos/dates -->
+    <div class="section-block">
+      <p class="section-desc" style="margin-bottom:32px;">The Weekly Lecture series introduce participants to semiconductor and quantum technologies through a semester-long series of sessions, where every lecture is followed by hands-on activities to reinforce learning. Starting with an orientation, participants progressively explore vacuum processes, plasma processing, photolithography, and gold plating on the semiconductor side, then transition into laser-based measurements, quantum optics, the double-slit experiment, and quantum cryptography. This lecture series is currently being delivered to the Fall 2026 cohort. We extend a special thanks to Dr. John P. Iorio, Director of the SCSD Adult Education Department, SCSD Adult Education staff members Janet Staub, Paul Worden, and Jasenko Mondom, and, from Jubilee Homes, Cherylene Billue(Director of Workforce Initiatives), and Madea Holman(Program Manager), for their continued support of the Q-SUCCEED-CNY program.</p>
+      <p class="section-desc" style="margin-top:-20px; margin-bottom:32px; font-size:0.85rem; color:#64748b; font-style:italic;">The images below are stock illustrations of each topic. Fall 2026 session photos and dates will replace them as the semester progresses.</p>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 1</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Silicon_wafer_researcher.jpg/960px-Silicon_wafer_researcher.jpg" alt="Placeholder: a researcher holding a silicon wafer in a cleanroom"></div><div class="card-meta"><h3>Lecture 1</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 2</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Integrated_circuit_on_microchip.jpg/960px-Integrated_circuit_on_microchip.jpg" alt="Placeholder: an integrated circuit on a printed circuit board"></div><div class="card-meta"><h3>Lecture 2</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 3</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Ion_bombardment_units.JPG/960px-Ion_bombardment_units.JPG" alt="Placeholder: vacuum and ion bombardment equipment"></div><div class="card-meta"><h3>Lecture 3</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 4</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Optoelectronics_experiment.jpg/960px-Optoelectronics_experiment.jpg" alt="Placeholder: an optoelectronics experiment on a laser bench"></div><div class="card-meta"><h3>Lecture 4</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 5</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cleanroom_-_photolithography_lab_%289148324481%29.jpg/960px-Cleanroom_-_photolithography_lab_%289148324481%29.jpg" alt="Placeholder: a photolithography bay in a cleanroom"></div><div class="card-meta"><h3>Lecture 5</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 6</span><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Square_diffraction.jpg" alt="Placeholder: a laser diffraction interference pattern"></div><div class="card-meta"><h3>Lecture 6</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 7</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg/960px-Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg" alt="Placeholder: an optical table set up for precision laser measurement"></div><div class="card-meta"><h3>Lecture 7</h3><p class="meta-line">Date TBD</p></div></article>
+        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 8</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Magnetron_sputtering_source.jpg/960px-Magnetron_sputtering_source.jpg" alt="Placeholder: plasma glow inside a magnetron sputtering source"></div><div class="card-meta"><h3>Lecture 8</h3><p class="meta-line">Date TBD</p></div></article>
+      </div>
+    </div>
+
+    <!-- Placeholder field trip block — same section rhythm, vacant state -->
+    <div class="section-block">
+      <div class="section-header">
+        <span class="section-chip">Field Trip</span>
+        <h2 class="section-title">Cornell Cleanroom Visit</h2>
+        <p class="section-desc">Field trip details for Fall 2026 will be announced as the semester progresses.</p>
+      </div>
+      <div class="program-card" style="position:relative; height:220px; overflow:hidden;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Semiconductor_clean_room.jpg/1280px-Semiconductor_clean_room.jpg" alt="Placeholder: technicians working in a semiconductor cleanroom" style="width:100%; height:100%; object-fit:cover;">
+        <p style="position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center; padding-bottom:18px; margin:0; color:#94a3b8; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; font-size:0.85rem; background:linear-gradient(180deg, transparent 55%, rgba(13,18,38,0.92) 100%);">Details Coming Soon</p>
+      </div>
+    </div>
+
+    <!-- Placeholder workshop block — same section rhythm, vacant state -->
+    <div class="section-block">
+      <div class="section-header">
+        <span class="section-chip" style="background:rgba(245,158,11,0.1); border-color:rgba(245,158,11,0.3); color:#fbbf24;">Five-Day Workshop</span>
+        <p class="section-desc"></p>
+      </div>
+      <div class="program-card" style="position:relative; height:260px; overflow:hidden;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Rochester_Institute_of_Technology_28.jpg/1280px-Rochester_Institute_of_Technology_28.jpg" alt="Placeholder: a university microelectronics teaching lab" style="width:100%; height:100%; object-fit:cover;">
+        <p style="position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center; padding-bottom:18px; margin:0; color:#94a3b8; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; font-size:0.85rem; background:linear-gradient(180deg, transparent 55%, rgba(13,18,38,0.92) 100%);">Schedule Coming Soon</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END FALL 2026 PANEL ==================== -->
+
 </section>
 
 <!-- PROGRAM MODAL -->
@@ -1404,6 +1482,13 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
   function closeWorkshop() {
     document.getElementById('wsModal').classList.remove('open');
     document.body.style.overflow = '';
+  }
+
+  /* ── Cohort tabs ── */
+  function switchCohort(which) {
+    document.querySelectorAll('.cohort-tab').forEach(t => t.classList.toggle('active', t.dataset.cohort === which));
+    document.getElementById('panel-spring').classList.toggle('active', which === 'spring');
+    document.getElementById('panel-fall').classList.toggle('active', which === 'fall');
   }
 </script>
 </body>
