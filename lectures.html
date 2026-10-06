@@ -943,23 +943,6 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
     </div>
   </div>
 
-  <!-- LECTURE MODAL -->
-  <div class="detail-modal" id="lectureModal">
-    <div class="detail-backdrop" onclick="closeLecture()"></div>
-    <div class="detail-card" style="max-width:760px;">
-      <button class="detail-close" onclick="closeLecture()">&times;</button>
-      <div class="detail-head">
-        <span class="detail-chip" id="lec-chip"></span>
-        <h3 id="lec-title"></h3>
-        <p class="detail-meta" id="lec-date"></p>
-      </div>
-      <p style="color:#64748b; font-size:0.85rem; margin-bottom:6px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Session Description</p>
-      <div id="lec-desc" style="background:#0d1226; border:1px dashed rgba(255,255,255,0.12); border-radius:10px; padding:16px; color:#94a3b8; font-size:0.9rem; line-height:1.7; min-height:80px; margin-bottom:24px;"></div>
-      <p style="color:#64748b; font-size:0.85rem; margin-bottom:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">📷 Session Photos</p>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;" id="lec-photos"></div>
-    </div>
-  </div>
-
   <!-- ===== FIELD TRIP — FANCY SHOWCASE ===== -->
   <div class="section-block">
     <div class="section-header">
@@ -1259,14 +1242,36 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
       <p class="section-desc" style="margin-bottom:32px;">The Weekly Lecture series introduce participants to semiconductor and quantum technologies through a semester-long series of sessions, where every lecture is followed by hands-on activities to reinforce learning. Starting with an orientation, participants progressively explore vacuum processes, plasma processing, photolithography, and gold plating on the semiconductor side, then transition into laser-based measurements, quantum optics, the double-slit experiment, and quantum cryptography. This lecture series is currently being delivered to the Fall 2026 cohort. We extend a special thanks to Dr. John P. Iorio, Director of the SCSD Adult Education Department, SCSD Adult Education team members Janet Staub, Paul Worden, and Jasenko Mondom, and, from Jubilee Homes, Cherylene Billue(Director of Workforce Initiatives), and Madea Holman(Program Manager), for their continued support of the Q-SUCCEED-CNY program.</p>
       <p class="section-desc" style="margin-top:-20px; margin-bottom:32px; font-size:0.85rem; color:#64748b; font-style:italic;">The images below are stock illustrations of each topic. Fall 2026 session photos and dates will replace them as the semester progresses.</p>
       <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 1</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Silicon_wafer_researcher.jpg/960px-Silicon_wafer_researcher.jpg" alt="Placeholder: a researcher holding a silicon wafer in a cleanroom"></div><div class="card-meta"><h3>Lecture 1</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 2</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Integrated_circuit_on_microchip.jpg/960px-Integrated_circuit_on_microchip.jpg" alt="Placeholder: an integrated circuit on a printed circuit board"></div><div class="card-meta"><h3>Lecture 2</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 3</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Ion_bombardment_units.JPG/960px-Ion_bombardment_units.JPG" alt="Placeholder: vacuum and ion bombardment equipment"></div><div class="card-meta"><h3>Lecture 3</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 4</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Optoelectronics_experiment.jpg/960px-Optoelectronics_experiment.jpg" alt="Placeholder: an optoelectronics experiment on a laser bench"></div><div class="card-meta"><h3>Lecture 4</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 5</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cleanroom_-_photolithography_lab_%289148324481%29.jpg/960px-Cleanroom_-_photolithography_lab_%289148324481%29.jpg" alt="Placeholder: a photolithography bay in a cleanroom"></div><div class="card-meta"><h3>Lecture 5</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 6</span><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Square_diffraction.jpg" alt="Placeholder: a laser diffraction interference pattern"></div><div class="card-meta"><h3>Lecture 6</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 7</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg/960px-Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg" alt="Placeholder: an optical table set up for precision laser measurement"></div><div class="card-meta"><h3>Lecture 7</h3><p class="meta-line">Date TBD</p></div></article>
-        <article class="program-card"><div class="card-media"><span class="card-pill">Lecture 8</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Magnetron_sputtering_source.jpg/960px-Magnetron_sputtering_source.jpg" alt="Placeholder: plasma glow inside a magnetron sputtering source"></div><div class="card-meta"><h3>Lecture 8</h3><p class="meta-line">Date TBD</p></div></article>
+        <!-- Lecture 1: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="1" data-date="September 17 &amp; 24, 2026"
+          data-desc="The lecture covered the fundamentals of semiconductors and cleanroom environments. Participants learned what semiconductors were, where they were used, and why even very small particles could affect semiconductor manufacturing. The lecture also covered cleanroom classifications, air filtration, temperature and humidity control, sources of contamination, proper gowning procedures, cleanroom rules, safety practices, and monitoring systems.
+For the lab, participants were taught how to build simple air and cleanroom simulators using materials such as cardboard boxes, plastic wrap, a flashlight, a computer fan, and a battery. They observed how airborne particles moved when the air was disturbed and how airflow from the fan affected particles inside the model cleanroom. This hands-on activity helped participants understand how controlled airflow can reduce contamination in a cleanroom."
+          data-sites="QS-CNY &amp; QS-North" data-photo="images/Fall%202026/Lab1/20260924_191133.jpg"
+          data-photos="images/Fall%202026/Lab1/20260917_130120.jpg,images/Fall%202026/Lab1/20260917_130139.jpg,images/Fall%202026/Lab1/20260917_130213.jpg,images/Fall%202026/Lab1/20260917_130811.jpg,images/Fall%202026/Lab1/20260917_130945.jpg,images/Fall%202026/Lab1/20260917_131018.jpg,images/Fall%202026/Lab1/20260917_131031.jpg,images/Fall%202026/Lab1/20260917_131037.jpg,images/Fall%202026/Lab1/20260917_131359.jpg,images/Fall%202026/Lab1/20260917_132050.jpg,images/Fall%202026/Lab1/20260917_132101.jpg,images/Fall%202026/Lab1/20260917_132824.jpg,images/Fall%202026/Lab1/20260917_132829.jpg,images/Fall%202026/Lab1/20260917_132911.jpg,images/Fall%202026/Lab1/20260917_132936.jpg,images/Fall%202026/Lab1/20260917_132950.jpg,images/Fall%202026/Lab1/20260917_132956.jpg,images/Fall%202026/Lab1/20260917_133012.jpg,images/Fall%202026/Lab1/20260917_133045.jpg,images/Fall%202026/Lab1/20260917_133230.jpg,images/Fall%202026/Lab1/20260917_133231.jpg,images/Fall%202026/Lab1/20260917_133312.jpg,images/Fall%202026/Lab1/20260917_133321.jpg,images/Fall%202026/Lab1/20260924_182111.jpg,images/Fall%202026/Lab1/20260924_182137.jpg,images/Fall%202026/Lab1/20260924_190603.jpg,images/Fall%202026/Lab1/20260924_191044.jpg,images/Fall%202026/Lab1/20260924_191100.jpg,images/Fall%202026/Lab1/20260924_191133.jpg,images/Fall%202026/Lab1/20260924_191318.jpg,images/Fall%202026/Lab1/20260924_191338.jpg,images/Fall%202026/Lab1/20260924_202915.jpg,images/Fall%202026/Lab1/20260924_202917.jpg,images/Fall%202026/Lab1/20260924_202919.jpg"><div class="card-media"><span class="card-pill">Lecture 1</span><img src="images/Fall%202026/Lab1/20260924_191133.jpg" alt="Lecture 1"></div><div class="card-meta"><h3>Lecture 1</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">September 17 &amp; 24, 2026</p></div></article>
+        <!-- Lecture 2: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="2" data-date="October 1, 2026"
+          data-desc="The lecture covered the fundamentals and applications of lasers and photonics, including how light behaves, the properties of lasers, and how lasers are used in semiconductor manufacturing, photolithography, telecommunications, medicine, and other emerging technologies. Participants learned about laser beam properties such as irradiance and divergence, different laser hazard classifications, and important laser safety practices. The lecture also introduced photonics and its role in generating, manipulating, transporting, and detecting light.
+For the lab, participants were taught how to set up and work with lasers and optical components. They practiced positioning and aligning components on an optical bench and observed how the laser beam interacted with different elements. This hands-on activity helped participants understand basic laser operation, beam alignment, and the use of optical systems in photonics."
+          data-sites="QS-CNY &amp; QS-North" data-photo="images/Fall%202026/Lec2/20261001_194408.jpg"
+          data-photos="images/Fall%202026/Lec2/20260924_131835.jpg,images/Fall%202026/Lec2/20260924_133914.jpg,images/Fall%202026/Lec2/20260924_134120.jpg,images/Fall%202026/Lec2/20260924_134510.jpg,images/Fall%202026/Lec2/20260924_134554.jpg,images/Fall%202026/Lec2/20260924_135417.jpg,images/Fall%202026/Lec2/20260924_135629.jpg,images/Fall%202026/Lec2/20261001_193402.jpg,images/Fall%202026/Lec2/20261001_193451.jpg,images/Fall%202026/Lec2/20261001_193500.jpg,images/Fall%202026/Lec2/20261001_193732.jpg,images/Fall%202026/Lec2/20261001_193734.jpg,images/Fall%202026/Lec2/20261001_193759.jpg,images/Fall%202026/Lec2/20261001_193837.jpg,images/Fall%202026/Lec2/20261001_193855.jpg,images/Fall%202026/Lec2/20261001_194408.jpg,images/Fall%202026/Lec2/20261001_194412.jpg,images/Fall%202026/Lec2/20261001_194416.jpg,images/Fall%202026/Lec2/20261001_201122.jpg"><div class="card-media"><span class="card-pill">Lecture 2</span><img src="images/Fall%202026/Lec2/20261001_194408.jpg" alt="Lecture 2"></div><div class="card-meta"><h3>Lecture 2</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">October 1, 2026</p></div></article>
+        <!-- Lecture 3: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="3" data-date="Date TBD" data-desc=""
+          data-sites="QS-CNY &amp; QS-North" data-photos=""><div class="card-media"><span class="card-pill">Lecture 3</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Ion_bombardment_units.JPG/960px-Ion_bombardment_units.JPG" alt="Placeholder: vacuum and ion bombardment equipment"></div><div class="card-meta"><h3>Lecture 3</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">Date TBD</p></div></article>
+        <!-- Lecture 4: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="4" data-date="Date TBD" data-desc=""
+          data-sites="QS-CNY &amp; QS-North" data-photos=""><div class="card-media"><span class="card-pill">Lecture 4</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Optoelectronics_experiment.jpg/960px-Optoelectronics_experiment.jpg" alt="Placeholder: an optoelectronics experiment on a laser bench"></div><div class="card-meta"><h3>Lecture 4</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">Date TBD</p></div></article>
+        <!-- Lecture 5: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="5" data-date="Date TBD" data-desc=""
+          data-sites="QS-CNY &amp; QS-North" data-photos=""><div class="card-media"><span class="card-pill">Lecture 5</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cleanroom_-_photolithography_lab_%289148324481%29.jpg/960px-Cleanroom_-_photolithography_lab_%289148324481%29.jpg" alt="Placeholder: a photolithography bay in a cleanroom"></div><div class="card-meta"><h3>Lecture 5</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">Date TBD</p></div></article>
+        <!-- Lecture 6: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="6" data-date="Date TBD" data-desc=""
+          data-sites="QS-CNY &amp; QS-North" data-photos=""><div class="card-media"><span class="card-pill">Lecture 6</span><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Square_diffraction.jpg" alt="Placeholder: a laser diffraction interference pattern"></div><div class="card-meta"><h3>Lecture 6</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">Date TBD</p></div></article>
+        <!-- Lecture 7: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="7" data-date="Date TBD" data-desc=""
+          data-sites="QS-CNY &amp; QS-North" data-photos=""><div class="card-media"><span class="card-pill">Lecture 7</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg/960px-Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg" alt="Placeholder: an optical table set up for precision laser measurement"></div><div class="card-meta"><h3>Lecture 7</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">Date TBD</p></div></article>
+        <!-- Lecture 8: delivered to both QS-CNY and QS-North -->
+        <article class="lecture-card" onclick="openLecture(event)" data-num="8" data-date="Date TBD" data-desc=""
+          data-sites="QS-CNY &amp; QS-North" data-photos=""><div class="card-media"><span class="card-pill">Lecture 8</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Magnetron_sputtering_source.jpg/960px-Magnetron_sputtering_source.jpg" alt="Placeholder: plasma glow inside a magnetron sputtering source"></div><div class="card-meta"><h3>Lecture 8</h3><p class="card-kicker">QS-CNY &amp; QS-North</p><p class="meta-line">Date TBD</p></div></article>
       </div>
     </div>
 
@@ -1297,6 +1302,25 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
 
   </div>
   <!-- ==================== END FALL 2026 PANEL ==================== -->
+
+  <!-- Shared by both cohort panels, so it lives outside them -->
+  <!-- LECTURE MODAL -->
+  <div class="detail-modal" id="lectureModal">
+    <div class="detail-backdrop" onclick="closeLecture()"></div>
+    <div class="detail-card" style="max-width:760px;">
+      <button class="detail-close" onclick="closeLecture()">&times;</button>
+      <div class="detail-head">
+        <span class="detail-chip" id="lec-chip"></span>
+        <h3 id="lec-title"></h3>
+        <p class="detail-meta" id="lec-date"></p>
+      </div>
+      <p style="color:#64748b; font-size:0.85rem; margin-bottom:6px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Session Description</p>
+      <div id="lec-desc" style="white-space:pre-line; background:#0d1226; border:1px dashed rgba(255,255,255,0.12); border-radius:10px; padding:16px; color:#94a3b8; font-size:0.9rem; line-height:1.7; min-height:80px; margin-bottom:24px;"></div>
+      <p style="color:#64748b; font-size:0.85rem; margin-bottom:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">📷 Session Photos</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;" id="lec-photos"></div>
+    </div>
+  </div>
+
 
 </section>
 
@@ -1354,7 +1378,7 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
     const date = card.dataset.date;
     const desc = card.dataset.desc;
     document.getElementById('lec-chip').textContent = `Lecture ${n}`;
-    document.getElementById('lec-title').textContent = `Lecture ${n}`;
+    document.getElementById('lec-title').textContent = card.dataset.sites ? `Lecture ${n} · ${card.dataset.sites}` : `Lecture ${n}`;
     document.getElementById('lec-date').textContent = date;
     document.getElementById('lec-desc').textContent = desc || 'Description will be added after the session.';
 
