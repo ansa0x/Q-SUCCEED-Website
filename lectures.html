@@ -12,7 +12,13 @@
     .desktop-nav { display: flex; gap: 24px; }
     .desktop-nav a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
     .desktop-nav a:hover { color: #a5b4fc; }
-    .news-hero { position: relative; padding: 120px 24px 80px; text-align: center; overflow: hidden; background: url('images/Lec1/20260128_144823.jpg') center/cover no-repeat; }
+    .news-hero { position: relative; padding: 120px 24px 80px; text-align: center; overflow: hidden; background: #0d1226; isolation: isolate; }
+    /* Rotating banner photos: crossfade with a slow zoom, under the grid/glow overlays */
+    .hero-slides { position: absolute; inset: 0; z-index: -1; }
+    .hero-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1); transition: opacity 1.6s ease, transform 7s ease-out; }
+    .hero-slides img.active { opacity: 1; transform: scale(1.05); }
+    .hero-slides::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,18,38,0.45), rgba(13,18,38,0.6)); }
+    @media (prefers-reduced-motion: reduce) { .hero-slides img { transition: none; transform: none; } .hero-slides img.active { transform: none; } }
     .news-hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
       background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
       background-size: 54px 54px; opacity: 0.25; }
@@ -807,6 +813,16 @@
 </div>
 
 <section class="news-hero">
+  <div class="hero-slides" aria-hidden="true">
+    <img src="images/hero/hero-01.jpg" alt="" class="active">
+    <img src="images/hero/hero-02.jpg" alt="" loading="lazy">
+    <img src="images/hero/hero-03.jpg" alt="" loading="lazy">
+    <img src="images/hero/hero-04.jpg" alt="" loading="lazy" style="object-position: center 25%;">
+    <img src="images/hero/hero-05.jpg" alt="" loading="lazy">
+    <img src="images/hero/hero-06.jpg" alt="" loading="lazy">
+    <img src="images/hero/hero-07.jpg" alt="" loading="lazy" style="object-position: center 25%;">
+    <img src="images/hero/hero-08.jpg" alt="" loading="lazy" style="object-position: center 40%;">
+  </div>
   <div class="chip-row"></div>
   <h1>Inside the Classroom & Lab</h1>
   <p>Highlights from Q-SUCCEED lectures, workshops, and field trips.</p>
@@ -1507,6 +1523,19 @@ For the lab, participants were taught how to set up and work with lasers and opt
     document.getElementById('wsModal').classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  /* ── Hero slideshow ── */
+  (function initHeroSlides() {
+    const slides = document.querySelectorAll('.hero-slides img');
+    if (slides.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0;
+    setInterval(() => {
+      if (document.hidden) return;
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 6000);
+  })();
 
   /* ── Cohort tabs ── */
   function switchCohort(which) {
