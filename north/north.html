@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q-SUCCEED-NORTH | Jefferson Community College</title>
+  <meta name="description" content="Q-SUCCEED-NORTH: Quantum and Semiconductor Upskilling for Career Change through Experiential Education Deployment in Jefferson County.">
+  <meta name="theme-color" content="#040820">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="north.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- Background layers -->
+  <canvas id="lattice" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- Icon sprite (chip outline + Bloch sphere) used for section watermarks -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="ico-chip" viewBox="0 0 100 100">
+      <rect x="25" y="25" width="50" height="50" rx="4"/>
+      <rect x="36" y="36" width="28" height="28" rx="2"/>
+      <circle cx="31" cy="31" r="2"/>
+      <path d="M31 25V12M40.5 25V12M50 25V12M59.5 25V12M69 25V12M31 75V88M40.5 75V88M50 75V88M59.5 75V88M69 75V88M25 31H12M25 40.5H12M25 50H12M25 59.5H12M25 69H12M75 31H88M75 40.5H88M75 50H88M75 59.5H88M75 69H88"/>
+    </symbol>
+    <symbol id="ico-bloch" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40"/>
+      <ellipse cx="50" cy="50" rx="40" ry="12"/>
+      <ellipse cx="50" cy="50" rx="12" ry="40" stroke-dasharray="3 4"/>
+      <path d="M50 6V94"/>
+      <path d="M50 50L73 25"/>
+      <circle cx="73" cy="25" r="3.5" class="fill"/>
+      <circle cx="50" cy="50" r="2" class="fill"/>
+    </symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#top" class="logo" aria-label="Q-SUCCEED-NORTH home">Q-SUCCEED<span>-NORTH</span></a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <button class="mobile-menu-close" type="button" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <!-- Semiconductor wafer watermark -->
+    <div class="wafer" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" focusable="false">
+        <defs>
+          <clipPath id="wafer-inner">
+            <path d="M406.2 935 A445 445 0 1 1 593.8 935 Z"/>
+          </clipPath>
+          <!-- iridescent sheen like a real polished wafer -->
+          <linearGradient id="wafer-sheen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3fd8ff"/>
+            <stop offset=".3" stop-color="#6a5cff"/>
+            <stop offset=".5" stop-color="#c25cff"/>
+            <stop offset=".68" stop-color="#ff6fae"/>
+            <stop offset=".85" stop-color="#e36515"/>
+            <stop offset="1" stop-color="#3fd8ff"/>
+          </linearGradient>
+          <radialGradient id="wafer-glare" cx=".32" cy=".26" r=".55">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+          <!-- dark scribe streets between dies, plus a little circuitry inside each die -->
+          <pattern id="die-grid" x="474" y="480" width="52" height="40" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="52" height="40" fill="none" stroke="#050a26" stroke-width="4.5"/>
+            <rect x="8" y="8" width="12" height="7" fill="#ffffff" opacity=".35"/>
+            <rect x="34" y="26" width="10" height="6" fill="none" stroke="#ffffff" stroke-width=".9" opacity=".45"/>
+            <path d="M24 10h16M24 15h10M8 24h18" stroke="#ffffff" stroke-width=".8" opacity=".3"/>
+          </pattern>
+        </defs>
+        <path d="M403.6 960 A470 470 0 1 1 596.4 960 Z" fill="#0b1240" stroke="#a8ecff" stroke-width="4"/>
+        <g clip-path="url(#wafer-inner)">
+          <rect width="1000" height="1000" fill="url(#wafer-sheen)" opacity=".45"/>
+          <rect width="1000" height="1000" fill="url(#die-grid)"/>
+          <rect class="die-lit die-lit--o" style="--d:0.0s" x="476" y="482" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--c" style="--d:0.7s" x="320" y="562" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--o" style="--d:1.4s" x="684" y="362" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--c" style="--d:2.1s" x="216" y="322" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--c" style="--d:2.8s" x="580" y="682" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--o" style="--d:3.5s" x="788" y="562" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--o" style="--d:4.2s" x="372" y="202" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--c" style="--d:4.9s" x="164" y="682" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--c" style="--d:0.6s" x="632" y="162" width="48" height="36" rx="1.5"/>
+          <rect class="die-lit die-lit--o" style="--d:1.3s" x="424" y="642" width="48" height="36" rx="1.5"/>
+          <rect width="1000" height="1000" fill="url(#wafer-glare)"/>
+        </g>
+        <circle cx="500" cy="500" r="452" fill="none" stroke="#a8ecff" stroke-width="1.5" stroke-dasharray="6 10"/>
+      </svg>
+    </div>
+
+    <!-- PCB circuit-trace layer -->
+    <svg class="circuits" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="ct-fade-center" cx="50%" cy="46%" r="55%">
+          <stop offset="0" stop-color="#000"/>
+          <stop offset=".42" stop-color="#000"/>
+          <stop offset=".85" stop-color="#fff"/>
+        </radialGradient>
+        <linearGradient id="ct-fade-bottom" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff"/>
+          <stop offset=".6" stop-color="#fff"/>
+          <stop offset="1" stop-color="#000"/>
+        </linearGradient>
+        <mask id="ct-mask-center"><rect width="1440" height="800" fill="url(#ct-fade-center)"/></mask>
+        <mask id="ct-mask-bottom"><rect width="1440" height="800" fill="url(#ct-fade-bottom)"/></mask>
+        <filter id="ct-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g mask="url(#ct-mask-bottom)">
+        <g mask="url(#ct-mask-center)">
+          <g class="traces">
+            <path pathLength="1000" d="M0 120H180V220H340"/>
+            <path pathLength="1000" d="M0 300H120V420H260V520"/>
+            <path pathLength="1000" d="M0 620H200V560H330"/>
+            <path pathLength="1000" d="M60 0V80H240V140H420"/>
+            <path pathLength="1000" d="M0 760H380V690H460"/>
+            <path pathLength="1000" d="M1440 140H1260V230H1100"/>
+            <path pathLength="1000" d="M1440 330H1320V450H1180V540"/>
+            <path pathLength="1000" d="M1440 640H1250V580H1120"/>
+            <path pathLength="1000" d="M1380 0V90H1200V150H1020"/>
+            <path pathLength="1000" d="M1440 760H1060V700H980"/>
+            <path pathLength="1000" d="M700 0V40H520V90"/>
+            <path pathLength="1000" d="M760 0V60H940V100"/>
+          </g>
+          <g class="signals" filter="url(#ct-glow)">
+            <path pathLength="1000" style="--d:7s;--delay:0s" d="M0 120H180V220H340"/>
+            <path pathLength="1000" class="alt" style="--d:9s;--delay:-3s" d="M0 300H120V420H260V520"/>
+            <path pathLength="1000" style="--d:8s;--delay:-5s" d="M0 620H200V560H330"/>
+            <path pathLength="1000" class="alt" style="--d:10s;--delay:-1s" d="M60 0V80H240V140H420"/>
+            <path pathLength="1000" style="--d:11s;--delay:-6s" d="M0 760H380V690H460"/>
+            <path pathLength="1000" class="alt" style="--d:7.5s;--delay:-2s" d="M1440 140H1260V230H1100"/>
+            <path pathLength="1000" style="--d:9.5s;--delay:-4s" d="M1440 330H1320V450H1180V540"/>
+            <path pathLength="1000" class="alt" style="--d:8.5s;--delay:-7s" d="M1440 640H1250V580H1120"/>
+            <path pathLength="1000" style="--d:10s;--delay:-2.5s" d="M1380 0V90H1200V150H1020"/>
+            <path pathLength="1000" style="--d:12s;--delay:-8s" d="M1440 760H1060V700H980"/>
+            <path pathLength="1000" class="alt" style="--d:6s;--delay:-1.5s" d="M700 0V40H520V90"/>
+            <path pathLength="1000" style="--d:6.5s;--delay:-4.5s" d="M760 0V60H940V100"/>
+          </g>
+          <g class="vias">
+            <circle cx="180" cy="120" r="3"/><circle cx="340" cy="220" r="5"/>
+            <circle cx="120" cy="420" r="3"/><circle cx="260" cy="520" r="5"/>
+            <circle cx="200" cy="560" r="3"/><circle cx="330" cy="560" r="5"/>
+            <circle cx="240" cy="80" r="3"/><circle cx="420" cy="140" r="5"/>
+            <circle cx="380" cy="690" r="3"/><circle cx="460" cy="690" r="5"/>
+            <circle cx="1260" cy="140" r="3"/><circle cx="1100" cy="230" r="5"/>
+            <circle cx="1320" cy="450" r="3"/><circle cx="1180" cy="540" r="5"/>
+            <circle cx="1250" cy="580" r="3"/><circle cx="1120" cy="580" r="5"/>
+            <circle cx="1200" cy="90" r="3"/><circle cx="1020" cy="150" r="5"/>
+            <circle cx="1060" cy="700" r="3"/><circle cx="980" cy="700" r="5"/>
+            <circle cx="520" cy="40" r="3"/><circle cx="520" cy="90" r="5"/>
+            <circle cx="940" cy="60" r="3"/><circle cx="940" cy="100" r="5"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">NSF-funded &middot; Jefferson Community College</p>
+      <div class="title-frame">
+        <span class="bracket tl" aria-hidden="true"></span>
+        <span class="bracket tr" aria-hidden="true"></span>
+        <span class="bracket bl" aria-hidden="true"></span>
+        <span class="bracket br" aria-hidden="true"></span>
+        <h1 class="hero-title" id="hero-title">Q-SUCCEED-NORTH</h1>
+      </div>
+      <div class="hero-subtitle-box">
+        <p class="hero-subtitle">
+          Quantum and Semiconductor Upskilling for Career Change through
+          Experiential Education Deployment in Jefferson County
+        </p>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to content"><span></span></a>
+  </section>
+
+  <main>
+    <!-- Intro -->
+    <section class="section intro-section" id="about" aria-labelledby="intro-title">
+      <svg class="wm wm-chip wm-intro" aria-hidden="true" focusable="false"><use href="#ico-chip"/></svg>
+      <div class="glass-card intro-card reveal">
+        <span class="hud-corner tl" aria-hidden="true"></span>
+        <span class="hud-corner br" aria-hidden="true"></span>
+        <div class="intro-heading-row">
+          <h2 id="intro-title">Empowering Adult Learners in Jefferson County</h2>
+          <img src="images/nsf_logo.jpg" alt="National Science Foundation logo" class="nsf-logo-inline" width="72" height="72">
+        </div>
+        <p class="lead">
+          Q-SUCCEED-NORTH is an NSF-funded program that gives adult learners&mdash;including career changers, veterans, mid-career non-technical professionals, and people with no prior STEM background&mdash;structured exposure to semiconductor, optics, and quantum technology careers.
+        </p>
+        <p class="desktop-only">
+          Based at Jefferson Community College, Q-SUCCEED-NORTH brings the Q-SUCCEED approach to Jefferson County. Participants take part in hands-on labs, workshops, and career exploration activities designed for people who have never worked in a technical field. No prior experience is needed.
+        </p>
+        <p class="desktop-only">
+          By building foundational skills, confidence, and connections with employers, the program offers an accessible first step into fast-growing semiconductor and quantum-related industries and helps strengthen the local workforce.
+        </p>
+      </div>
+    </section>
+
+    <!-- Laser alignment game (Lab 2) -->
+    <section class="section lab-section" aria-label="Beam Rush laser game">
+      <svg class="wm wm-bloch wm-images" aria-hidden="true" focusable="false"><use href="#ico-bloch"/></svg>
+      <!-- Beam Rush: arcade take on the Lab 2 laser setup. A flip mirror sends the beam to an upper or
+           lower steering mirror; steer onto pop-up targets past posts, beam blocks and iris gates. -->
+      <div class="lab reveal">
+        <div class="bench" tabindex="-1" aria-label="Laser bench. Move the pointer or use the up and down arrow keys to aim. Press Space to flip the beam between the upper and lower mirror.">
+          <img class="bench-item" data-item="goggles" src="images/game/goggles.png" alt="" draggable="false">
+          <img class="bench-item" data-item="laser" src="images/game/laser.png" alt="" draggable="false">
+          <div class="bench-item mirror-art" data-item="mu"><img src="images/game/mirror.png" alt="" draggable="false"></div>
+          <div class="bench-item mirror-art" data-item="ml"><img src="images/game/mirror.png" alt="" draggable="false"></div>
+          <button class="bench-item mirror-art flip-ctl" data-item="mf" type="button" aria-label="Flip mirror: switch between upper and lower mirror"><img src="images/game/mirror.png" alt="" draggable="false"></button>
+          <canvas class="bench-beam" aria-hidden="true"></canvas>
+
+          <div class="rush-hud">
+            <div class="rush-time" aria-hidden="true"><span></span></div>
+            <div class="rush-stats" aria-hidden="true">
+              <span class="rush-score">0</span>
+            </div>
+            <button class="rush-switch" type="button" aria-keyshortcuts="Space">Switch <span class="rush-key">| Space</span></button>
+          </div>
+
+          <div class="rush-overlay">
+            <p class="rush-title">Beam Rush</p>
+            <p class="rush-result" aria-live="polite"></p>
+            <button class="rush-play" type="button">Play</button>
+          </div>
+        </div>
+        <p class="sr-only" aria-live="polite" id="lab-status"></p>
+      </div>
+    </section>
+
+    <!-- Learn more + lab photos -->
+    <section class="section labs-more" aria-labelledby="labs-more-title">
+      <div class="labs-more-head reveal">
+        <h2 id="labs-more-title">Want to learn more about experiments like this?</h2>
+        <p>In Q-SUCCEED-NORTH you work with real lasers, optics, cleanrooms and vacuum systems in hands-on labs. No experience needed.</p>
+        <a href="#contact" class="labs-more-btn">Get in touch</a>
+      </div>
+      <!-- [PLACEHOLDER] Photos are from QS lab sessions (Fall 2026 shared lectures + Spring 2026 double slit and quantum optics labs); swap in Jefferson CC photos when available -->
+      <div class="lab-photos">
+        <figure class="lab-photo reveal"><img src="images/gallery-beam-splitter.jpg" alt="Participants aligning a quantum optics setup with a laser, beam splitter and detectors" loading="lazy"></figure>
+        <figure class="lab-photo reveal"><img src="images/gallery-aligning.jpg" alt="Two participants aligning optics on an optical breadboard" loading="lazy"></figure>
+        <figure class="lab-photo reveal"><img src="images/gallery-green-laser.jpg" alt="Two participants lit by a green laser beam during the double slit experiment" loading="lazy"></figure>
+        <figure class="lab-photo reveal"><img src="images/gallery-mirror-mount.jpg" alt="A participant adjusting a mirror mount during the laser lab" loading="lazy"></figure>
+        <figure class="lab-photo reveal"><img src="images/gallery-bell-jar.jpg" alt="A participant working on the vacuum chamber bell jar" loading="lazy"></figure>
+        <figure class="lab-photo reveal"><img src="images/gallery-vacuum-team.jpg" alt="Participants in gloves assembling a vacuum trainer" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- Chip-to-qubit band: scroll-linked watermark image with HUD reticles -->
+    <section class="nexus" aria-labelledby="nexus-intro">
+      <p class="nexus-intro" id="nexus-intro">Learn About</p>
+      <div class="nexus-frame">
+        <div class="nexus-layer">
+          <img src="images/nexus.jpg" alt="" width="1672" height="941" loading="lazy" decoding="async">
+          <div class="nexus-hud" aria-hidden="true">
+            <span class="reticle" style="--x:23%;--y:57%;--i:0"><span class="reticle-ring"></span><span class="reticle-tag">Semiconductor</span></span>
+            <span class="reticle reticle--mid" style="--x:58%;--y:49%;--i:1"><span class="reticle-ring"></span><span class="reticle-tag">Optics</span></span>
+            <span class="reticle reticle--left" style="--x:86%;--y:46%;--i:2"><span class="reticle-ring"></span><span class="reticle-tag">Quantum</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section team-section" id="team" aria-labelledby="team-title">
+      <svg class="wm wm-bloch wm-team" aria-hidden="true" focusable="false"><use href="#ico-bloch"/></svg>
+      <h2 class="section-title reveal" id="team-title">Project Team</h2>
+
+      <div class="team-grid">
+        <article class="glass-card team-card reveal">
+          <div class="team-bar" aria-hidden="true"></div>
+          <h3><a href="https://ecs.syracuse.edu/faculty-staff/moamer-mo-hasanovic" target="_blank" rel="noopener" class="team-name-link">Dr. Moamer Hasanovic</a></h3>
+          <p class="team-role">Principal Investigator</p>
+          <p class="team-description desktop-only">Leading the Q-SUCCEED initiative with expertise in quantum computing and semiconductor education, driving workforce development strategies.</p>
+          <p class="team-description desktop-only">Professor Hasanovic believes that exploring different approaches to classroom concepts is incredibly rewarding and the prospect of leveraging collective strengths and collaborating with students is something he finds truly inspirational.</p>
+        </article>
+
+        <article class="glass-card team-card reveal">
+          <div class="team-bar" aria-hidden="true"></div>
+          <h3><a href="https://www.linkedin.com/in/anusha-ghimire-7182a6222/" target="_blank" rel="noopener" class="team-name-link">Anusha Ghimire</a></h3>
+          <p class="team-role">Project Coordinator</p>
+          <p class="team-description desktop-only">Managing program operations, participant engagement, website development, data analysis, lab activities and coordination with community organizations and educational partners.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Affiliated Organizations -->
+    <section class="section affiliated" aria-labelledby="affiliated-title">
+      <svg class="wm wm-chip wm-affiliated" aria-hidden="true" focusable="false"><use href="#ico-chip"/></svg>
+      <h2 class="section-title reveal" id="affiliated-title">Affiliated Organizations</h2>
+      <div class="companies-marquee is-static reveal">
+        <ul class="companies-list">
+          <li class="company">Jefferson Community College</li>
+          <li class="company">Syracuse University</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src="https://ext.same-assets.com/3633044319/4209634519.png" alt="Syracuse University iSchool" class="footer-logo" onerror="this.style.display='none'">
+        <p class="footer-brand">Q-SUCCEED-NORTH</p>
+        <p>Quantum and Semiconductor<br>Upskilling for Career Change</p>
+        <!-- [PLACEHOLDER] social links -->
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </a>
+          <a href="mailto:anghimir@syr.edu" class="social-icon" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#top">Home</a>
+        <a href="#about">About Program</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <p><strong>Project Coordinator</strong></p>
+        <p>Email: <a href="mailto:anghimir@syr.edu" class="inline-link">anghimir@syr.edu</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright &copy; 2026 Q-SUCCEED-NORTH | Jefferson Community College | Syracuse University | All Rights Reserved
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" type="button" aria-label="Back to top">&uarr;</button>
+
+  <script src="north.js" defer></script>
+</body>
+</html>
