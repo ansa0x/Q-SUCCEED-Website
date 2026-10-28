@@ -93,7 +93,7 @@
     .detail-head h3 { color: #fff; font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
     .detail-meta { color: #64748b; font-size: 0.9rem; margin-bottom: 20px; }
     .detail-section-label { color: #e36515; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
-    .detail-desc-box { background: rgba(227,101,21,0.04); border: 1px dashed rgba(227,101,21,0.15); border-radius: 12px; padding: 18px; color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-bottom: 24px; }
+    .detail-desc-box { white-space: pre-line; background: rgba(227,101,21,0.04); border: 1px dashed rgba(227,101,21,0.15); border-radius: 12px; padding: 18px; color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-bottom: 24px; }
     .detail-photos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
     .detail-photos-grid img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 10px; cursor: zoom-in; transition: transform 0.3s, opacity 0.2s; }
     .detail-photos-grid img:only-child, .detail-photos-grid a:only-child img { grid-column: 1 / -1; max-height: 400px; aspect-ratio: auto; }
@@ -241,12 +241,99 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>Research &amp; Tech Forum — Syracuse</span><span>Syracuse.com Feature</span><span>NNN Symposium 2026</span><span>Microelectronics Commons — DC</span><span>NEUSN Rochester</span><span>NordTech Albany</span><span>NSF ExLENT PI Conference</span><span>Spring 2026 Cohort Live</span><span>Micron Day — Semiconductor Bakery</span>
-    <span>Research &amp; Tech Forum — Syracuse</span><span>Syracuse.com Feature</span><span>NNN Symposium 2026</span><span>Microelectronics Commons — DC</span><span>NEUSN Rochester</span><span>NordTech Albany</span><span>NSF ExLENT PI Conference</span><span>Spring 2026 Cohort Live</span><span>Micron Day — Semiconductor Bakery</span>
+    <span>SEMICON West 2026 — San Francisco</span><span>Albany Workforce Conference</span><span>HI-TEC 2026 — Austin</span><span>Research &amp; Tech Forum — Syracuse</span><span>Syracuse.com Feature</span><span>NNN Symposium 2026</span><span>Microelectronics Commons — DC</span><span>NEUSN Rochester</span><span>NordTech Albany</span><span>NSF ExLENT PI Conference</span><span>Spring 2026 Cohort Live</span><span>Micron Day — Semiconductor Bakery</span>
+    <span>SEMICON West 2026 — San Francisco</span><span>Albany Workforce Conference</span><span>HI-TEC 2026 — Austin</span><span>Research &amp; Tech Forum — Syracuse</span><span>Syracuse.com Feature</span><span>NNN Symposium 2026</span><span>Microelectronics Commons — DC</span><span>NEUSN Rochester</span><span>NordTech Albany</span><span>NSF ExLENT PI Conference</span><span>Spring 2026 Cohort Live</span><span>Micron Day — Semiconductor Bakery</span>
   </div>
 </div>
 
 <section class="page-sections">
+
+  <!-- ═══════════════════════════════════
+       SUMMER & FALL 2026 EVENTS
+  ═══════════════════════════════════ -->
+  <div class="section-block">
+    <div class="section-header">
+      <span class="section-chip chip-blue">Summer &amp; Fall 2026 Events</span>
+    </div>
+    <div class="card-grid">
+
+      <!-- SEMICON West 2026 -->
+      <article class="event-card" onclick="openEvent(this)"
+        data-chip="Conference" data-title="Q-SUCCEED Represents Syracuse University at SEMICON West 2026"
+        data-date="October 13–15, 2026" data-location="San Francisco, CA"
+        data-desc="Q-SUCCEED participated in SEMICON West 2026, one of the world's leading semiconductor industry conferences, held in San Francisco, California. The event brought together semiconductor manufacturers, technology companies, equipment suppliers, construction and infrastructure firms, academic institutions, researchers, and government representatives to explore advances in semiconductor technologies, manufacturing, and workforce development.
+Representing Syracuse University and Q-SUCCEED, Dr. Hasanovic and two additional university representatives participated at the New York State exhibition booth. The team engaged with visitors from academia and industry, introducing Q-SUCCEED's mission to expand semiconductor education and workforce training opportunities in Central New York.
+Throughout the conference, the representatives shared information about Q-SUCCEED's educational initiatives, including its emphasis on hands-on technical training and preparing students and community members for emerging opportunities in the semiconductor industry. Their participation also helped promote Syracuse University's broader educational and research capabilities to a national and international audience.
+Beyond the exhibition booth, Dr. Hasanovic and the team connected with Syracuse University alumni, visited exhibits hosted by semiconductor companies, and explored opportunities to establish industry relationships that could support the future growth and expansion of Q-SUCCEED's programs.
+A notable highlight was the opportunity to meet Syracuse Mayor Sharon Owens. Dr. Hasanovic and the team introduced Q-SUCCEED's community-focused workforce development efforts and discussed how the program supports the region's growing semiconductor ecosystem. The conversation highlighted the importance of accessible technical education in preparing the local workforce for opportunities associated with Micron's investment in Central New York and the broader semiconductor industry.
+Participation in SEMICON West strengthened Q-SUCCEED's visibility among academic, industry, and government stakeholders while creating opportunities for future collaboration. The event reinforced the program's commitment to connecting education with industry needs and supporting a skilled semiconductor workforce in Central New York."
+        data-photos="images/Fall%202026/News/SEMICON/IMG_1346.jpg,images/Fall%202026/News/SEMICON/IMG_1305.JPG,images/Fall%202026/News/SEMICON/IMG_1319.jpg,images/Fall%202026/News/SEMICON/IMG_1313.JPG,images/Fall%202026/News/SEMICON/IMG_1317.JPG,images/Fall%202026/News/SEMICON/IMG_1348.JPG"
+       >
+        <div class="card-media">
+          <span class="card-pill">Conference</span>
+          <span class="card-date-badge">October 13–15, 2026</span>
+          <img src="images/Fall%202026/News/SEMICON/IMG_1346.jpg" alt="Dr. Hasanovic with Syracuse Mayor Sharon Owens at SEMICON West 2026" style="object-position: center 20%;">
+        </div>
+        <div class="card-body">
+          <h3>SEMICON West 2026 — San Francisco</h3>
+          <p>Dr. Hasanovic and the team represented Syracuse University and Q-SUCCEED at the New York State booth and met Syracuse Mayor Sharon Owens.</p>
+          <div class="card-tags"><span class="card-tag">Conference</span><span class="card-tag">Industry</span><span class="card-tag">Semiconductor</span></div>
+        </div>
+      </article>
+
+      <!-- Albany Semiconductor Workforce Conference -->
+      <article class="event-card" onclick="openEvent(this)"
+        data-chip="Conference" data-title="Q-SUCCEED Strengthens Semiconductor Workforce Partnerships at Albany Conference"
+        data-date="September 15–17, 2026" data-location="Albany, NY"
+        data-desc="Q-SUCCEED participated in three days of semiconductor workforce development discussions, program presentations, and regional partnership meetings in Albany, New York, connecting with academic institutions, industry representatives, and workforce development organizations.
+On September 15, Professor Ethan Arnault, Q-SUCCEED's Co-Principal Investigator (Co-PI), participated in the SEMI Northeast Fall Forum at the Albany NanoTech Complex. He joined a panel discussing artificial intelligence, emerging technologies, and the evolving workforce needs of the semiconductor industry.
+On September 16, Dr. Hasanovic presented Q-SUCCEED's initiatives, highlighting its hands-on approach to semiconductor education, community engagement, and workforce development efforts in Central New York.
+On September 17, Dr. Hasanovic and Kerry Kennett, Engineering Instructor at Jefferson Community College, participated in the National Network for Microelectronics Education (NNME) annual meeting. Discussions focused on project progress, outcomes, and collaboration among regional institutions, including Syracuse University, Cornell University, Clarkson University, SUNY Albany, RPI, RIT, the University of Rochester, the University at Buffalo, and more.
+The visit also included engagement with NORDTECH (Northeast Regional Defense Technology Hub), which supports microelectronics research, innovation, and workforce development through regional partnerships.
+The three-day visit provided valuable opportunities to strengthen academic and industry connections, share Q-SUCCEED's progress, and explore ways to expand semiconductor education and workforce training across Central New York and the Northeast.
+Card photo: Albany NanoTech Complex by UpstateNYer, CC BY-SA 3.0, via Wikimedia Commons."
+        data-photos=""
+       >
+        <div class="card-media">
+          <span class="card-pill">Conference</span>
+          <span class="card-date-badge">September 15–17, 2026</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/SUNY_Nanotech_Center.jpg/1280px-SUNY_Nanotech_Center.jpg" alt="Albany NanoTech Complex in Albany, New York">
+        </div>
+        <div class="card-body">
+          <h3>Semiconductor Workforce Partnerships — Albany</h3>
+          <p>Three days in Albany: a SEMI Northeast Fall Forum panel, a Q-SUCCEED presentation, and the NNME annual meeting with regional partners.</p>
+          <div class="card-tags"><span class="card-tag">Panel</span><span class="card-tag">NNME</span><span class="card-tag">NORDTECH</span></div>
+        </div>
+      </article>
+
+      <!-- HI-TEC 2026 -->
+      <article class="event-card" onclick="openEvent(this)"
+        data-chip="Conference" data-title="Q-SUCCEED Advances Accessible Quantum Technology Education at HI-TEC 2026"
+        data-date="July 27–30, 2026" data-location="Austin, TX"
+        data-desc="Q-SUCCEED participated in the 2026 High Impact Technology Exchange Conference (HI-TEC) in Austin, Texas, contributing to national discussions on innovative approaches to quantum technology education and hands-on technical workforce development.
+HI-TEC is a national conference that brings together educators, industry professionals, researchers, and workforce development organizations to exchange ideas and share effective teaching practices in advanced technological education. The conference provides a platform for exploring new educational tools, curriculum development, and strategies for preparing students for careers in emerging technology fields.
+During the conference, Dr. Hasanovic presented a research paper and led an interactive workshop focused on quantum technology education and curriculum development. The workshop attracted approximately 20 participants and combined foundational quantum concepts with practical demonstrations using portable quantum laboratory equipment.
+A central focus of the workshop was making quantum technology education more accessible to institutions with limited laboratory resources. Traditional quantum laboratory setups can require expensive and specialized equipment, creating challenges for community colleges and other educational institutions. Dr. Hasanovic demonstrated how portable quantum laboratory systems can provide a more affordable alternative while allowing students to gain meaningful hands-on experience.
+The workshop was supported by Alexandra Bouillon, a student from SUNY Broome Community College, who assisted participants with hands-on laboratory activities. Alexandra had previously completed quantum technology training and contributed to the development of a portable quantum laboratory manual, gaining practical experience with the equipment and instructional activities presented during the session.
+Alexandra was also part of a SUNY Broome Community College team that competed in and won a Community College Innovation Challenge. The team's work incorporated theoretical learning and practical laboratory experiences, reflecting the hands-on educational approach emphasized by Q-SUCCEED.
+Through the presentation and workshop, Dr. Hasanovic and the participating students demonstrated how portable laboratory equipment and adaptable teaching materials can help educational institutions introduce quantum concepts without requiring substantial investments in specialized infrastructure.
+Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, practical, and inclusive approaches to emerging technology education. The event also provided opportunities to exchange teaching methods, connect with educators from other institutions, and promote broader adoption of hands-on quantum technology training."
+        data-photos="images/Fall%202026/News/HI-TEC/IMG_2080.jpeg,images/Fall%202026/News/HI-TEC/IMG_2107.jpeg,images/Fall%202026/News/HI-TEC/IMG_2077.jpeg,images/Fall%202026/News/HI-TEC/IMG_2067.jpeg,images/Fall%202026/News/HI-TEC/IMG_2071.jpeg,images/Fall%202026/News/HI-TEC/IMG_2066.jpeg"
+       >
+        <div class="card-media">
+          <span class="card-pill">Workshop</span>
+          <span class="card-date-badge">July 27–30, 2026</span>
+          <img src="images/Fall%202026/News/HI-TEC/IMG_2080.jpeg" alt="Dr. Hasanovic leading the quantum technology workshop at HI-TEC 2026">
+        </div>
+        <div class="card-body">
+          <h3>HI-TEC 2026 — Austin</h3>
+          <p>Dr. Hasanovic presented a research paper and led a hands-on workshop on teaching quantum technology with portable, affordable lab equipment.</p>
+          <div class="card-tags"><span class="card-tag">Workshop</span><span class="card-tag">Quantum</span><span class="card-tag">Education</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════
        MEDIA & OUTREACH
