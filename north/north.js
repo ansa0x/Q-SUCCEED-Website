@@ -894,4 +894,49 @@
 
   syncMotion();
   reducedMotion.addEventListener('change', syncMotion);
+
+  // ---------- Photo viewer (activities page) ----------
+  // Links with data-lightbox="group" open their full-size image in an overlay;
+  // without JavaScript they simply open the image.
+  (function initLightbox() {
+    var box = document.getElementById('lightbox');
+    var links = Array.prototype.slice.call(document.querySelectorAll('a[data-lightbox]'));
+    if (!box || !links.length) return;
+    var img = box.querySelector('img');
+    var group = [], index = 0, opener = null;
+    function show(i) {
+      index = (i + group.length) % group.length;
+      var a = group[index], thumb = a.querySelector('img');
+      img.src = a.getAttribute('href');
+      img.alt = thumb ? thumb.alt : '';
+      box.querySelector('.lightbox-prev').hidden = box.querySelector('.lightbox-next').hidden = group.length < 2;
+    }
+    function open(a) {
+      opener = a;
+      group = links.filter(function (l) { return l.dataset.lightbox === a.dataset.lightbox; });
+      show(group.indexOf(a));
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      box.querySelector('.lightbox-close').focus();
+    }
+    function close() {
+      box.hidden = true;
+      img.removeAttribute('src');
+      document.body.style.overflow = '';
+      if (opener) opener.focus();
+    }
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); open(a); });
+    });
+    box.querySelector('.lightbox-close').addEventListener('click', close);
+    box.querySelector('.lightbox-prev').addEventListener('click', function () { show(index - 1); });
+    box.querySelector('.lightbox-next').addEventListener('click', function () { show(index + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(index - 1);
+      else if (e.key === 'ArrowRight') show(index + 1);
+    });
+  })();
 })();

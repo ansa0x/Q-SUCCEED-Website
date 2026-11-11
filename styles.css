@@ -1220,3 +1220,125 @@ html {
     margin-top: -35px;
   }
 }
+
+/* Hero location line */
+.hero-location {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: -10px 0 24px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Two Program Locations (compact) */
+.locations-section {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: 50px auto;
+  padding: 0 40px;
+}
+
+.locations-title {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.location-card {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(227, 101, 21, 0.25);
+}
+
+.location-card img {
+  flex: none;
+  width: 38%;
+  object-fit: cover;
+}
+
+.location-body {
+  padding: 16px 18px;
+}
+
+.location-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(227, 101, 21, 0.12);
+  color: #c4520f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.location-body h3 {
+  color: #0a1152;
+  font-size: 1.15rem;
+  margin: 8px 0 4px;
+  white-space: nowrap;
+}
+
+.location-body p {
+  color: #2c2c2c;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.location-link {
+  color: #e36515;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .locations-section {
+    padding: 0 20px;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-location {
+    font-size: 0.95rem;
+  }
+}
+
+/* Keep the logo and nav on one line at laptop/tablet widths */
+@media (max-width: 1200px) {
+  .logo h1 {
+    white-space: nowrap;
+  }
+
+  .desktop-nav {
+    gap: 6px;
+  }
+
+  .desktop-nav a {
+    padding: 8px 10px;
+  }
+}

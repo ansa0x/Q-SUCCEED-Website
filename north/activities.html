@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activities &amp; Experiments | Q-SUCCEED-North | Watertown, NY</title>
+  <meta name="description" content="Hands-on experiments Q-SUCCEED-North students in Watertown, NY have explored: cleanrooms, lasers, vacuum systems, fiber optics, and printing patterns with light.">
+  <meta name="theme-color" content="#040820">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="north.css">
+</head>
+<body id="top" class="activities-page">
+  <a class="skip-link" href="#experiments">Skip to content</a>
+
+  <div class="bg-grid" aria-hidden="true"></div>
+  <!-- Decorative background: circuit traces, floating chips, light particles (purely visual) -->
+  <div class="act-deco" aria-hidden="true">
+    <svg class="act-traces" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <g class="trace-base">
+        <path d="M0 140h120l40 40h60"/><path d="M0 320h70l50-50h90"/><path d="M0 610h150l30 30h40"/><path d="M0 780h90l60-60h50"/>
+        <path d="M1440 200h-130l-40 40h-50"/><path d="M1440 430h-80l-50 50h-80"/><path d="M1440 690h-140l-30-30h-60"/>
+        <circle cx="220" cy="180" r="3"/><circle cx="210" cy="270" r="3"/><circle cx="220" cy="640" r="3"/><circle cx="200" cy="720" r="3"/>
+        <circle cx="1220" cy="240" r="3"/><circle cx="1230" cy="480" r="3"/><circle cx="1210" cy="660" r="3"/>
+      </g>
+      <g class="trace-pulse">
+        <path d="M0 140h120l40 40h60"/><path d="M0 610h150l30 30h40" style="animation-delay:-3s"/>
+        <path d="M1440 430h-80l-50 50h-80" style="animation-delay:-5s"/><path d="M1440 690h-140l-30-30h-60" style="animation-delay:-1.5s"/>
+      </g>
+    </svg>
+    <svg class="float-chip fc-1" viewBox="0 0 100 100"><use href="#ico-chip"/></svg>
+    <svg class="float-chip fc-2" viewBox="0 0 100 100"><use href="#ico-bloch"/></svg>
+    <svg class="float-chip fc-3" viewBox="0 0 100 100"><use href="#ico-chip"/></svg>
+    <svg class="float-chip fc-4" viewBox="0 0 100 100"><use href="#ico-bloch"/></svg>
+    <span class="particle" style="--x:6%;--d:-2s;--t:22s"></span>
+    <span class="particle" style="--x:14%;--d:-9s;--t:26s"></span>
+    <span class="particle" style="--x:22%;--d:-15s;--t:30s"></span>
+    <span class="particle" style="--x:78%;--d:-4s;--t:24s"></span>
+    <span class="particle" style="--x:86%;--d:-12s;--t:28s"></span>
+  </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="ico-chip" viewBox="0 0 100 100">
+      <rect x="25" y="25" width="50" height="50" rx="4"/>
+      <rect x="36" y="36" width="28" height="28" rx="2"/>
+      <circle cx="31" cy="31" r="2"/>
+      <path d="M31 25V12M40.5 25V12M50 25V12M59.5 25V12M69 25V12M31 75V88M40.5 75V88M50 75V88M59.5 75V88M69 75V88M25 31H12M25 40.5H12M25 50H12M25 59.5H12M25 69H12M75 31H88M75 40.5H88M75 50H88M75 59.5H88M75 69H88"/>
+    </symbol>
+    <symbol id="ico-bloch" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40"/>
+      <ellipse cx="50" cy="50" rx="40" ry="12"/>
+      <ellipse cx="50" cy="50" rx="12" ry="40" stroke-dasharray="3 4"/>
+      <path d="M50 6V94"/>
+      <path d="M50 50L73 25"/>
+      <circle cx="73" cy="25" r="3.5" class="fill"/>
+      <circle cx="50" cy="50" r="2" class="fill"/>
+    </symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="north.html" class="logo" aria-label="Q-SUCCEED-North home">Q-SUCCEED<span>-North</span></a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="north.html">Home</a>
+      <a href="activities.html" aria-current="page">Activities</a>
+      <a href="north.html#team">Team</a>
+      <a href="../news.html">News</a>
+      <a href="../index.html" title="Q-SUCCEED-CNY (Syracuse, NY)">Syracuse Program</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <button class="mobile-menu-close" type="button" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile">
+        <a href="north.html">Home</a>
+        <a href="activities.html" aria-current="page">Activities</a>
+        <a href="north.html#team">Team</a>
+        <a href="#contact">Contact</a>
+        <a href="../index.html">Q-SUCCEED-CNY (Syracuse)</a>
+        <a href="../news.html">News</a>
+        <a href="../lectures.html">Lectures/Labs</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="experiments">
+    <section class="act-hero" aria-labelledby="activities-title">
+      <div class="act-hero-text">
+        <p class="hero-eyebrow">Q-SUCCEED-North &middot; Watertown, NY</p>
+        <h1 id="activities-title">Activities <span>&amp;</span> Experiments</h1>
+        <p class="act-lede">A visual record of the hands-on experiments Q-SUCCEED-North students have explored, from building model cleanrooms to printing patterns with light.</p>
+        <nav class="act-jump" aria-label="Page sections">
+          <a href="#cleanroom" class="act-jump-btn">Experiments</a>
+          <a href="#field-trips" class="act-jump-btn act-jump-btn--alt">Field Trip</a>
+        </nav>
+      </div>
+      <div class="act-hero-stack" aria-hidden="true">
+        <img class="stack-1" src="images/Activities/web/hero/20261029_191353-800.jpg" alt="" loading="eager" decoding="async">
+        <img class="stack-2" src="images/Activities/web/hero/IMG_1271-800.jpg" alt="" loading="eager" decoding="async">
+        <img class="stack-3" src="images/Activities/web/hero/20261022_193909-800.jpg" alt="" loading="eager" decoding="async">
+        <span class="stack-chip"><svg viewBox="0 0 100 100"><use href="#ico-chip"/></svg></span>
+      </div>
+    </section>
+
+
+    <section class="exp reveal" id="cleanroom" aria-labelledby="cleanroom-title" style="--accent:#3fd8ff;--accent-rgb:63, 216, 255">
+      <div class="exp-grid">
+        <a class="ph ph-feature" href="images/Activities/web/cleanroom/20260924_191133-1600.jpg" data-lightbox="cleanroom">
+            <img src="images/Activities/web/cleanroom/20260924_191133-800.jpg" srcset="images/Activities/web/cleanroom/20260924_191133-800.jpg 800w, images/Activities/web/cleanroom/20260924_191133-1600.jpg 1600w" sizes="(max-width: 768px) 100vw, 58vw" alt="Students in a Jefferson sweatshirt assembling a cardboard cleanroom model" loading="lazy" decoding="async">
+          </a>
+        <div class="exp-card">
+          <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="6" width="16" height="13" rx="1.5"/><path d="M4 10h16M8 13.5h0M12 13.5h0M16 13.5h0"/><path d="M7 3.5c1 .8 2 .8 3 0s2-.8 3 0 2 .8 3 0"/></svg><span>Cleanrooms</span></p>
+          <h2 id="cleanroom-title">Building a Mini Cleanroom</h2>
+          <p>Computer chips are made in cleanrooms, rooms kept so clean that even a speck of dust in the air can ruin a chip. Students built their own small model cleanrooms from cardboard boxes, then used a fan and a flashlight to watch how moving air carries dust away. It shows why chip factories control their air so carefully.</p>
+        </div>
+        <div class="exp-thumbs">
+          <a class="ph ph-thumb" href="images/Activities/web/cleanroom/20260924_190603-1600.jpg" data-lightbox="cleanroom">
+            <img src="images/Activities/web/cleanroom/20260924_190603-800.jpg" srcset="images/Activities/web/cleanroom/20260924_190603-800.jpg 800w, images/Activities/web/cleanroom/20260924_190603-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="A team taping together the walls of their cleanroom box" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/cleanroom/20260924_191100-1600.jpg" data-lightbox="cleanroom">
+            <img src="images/Activities/web/cleanroom/20260924_191100-800.jpg" srcset="images/Activities/web/cleanroom/20260924_191100-800.jpg 800w, images/Activities/web/cleanroom/20260924_191100-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Students fitting the lid onto their cleanroom model" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/cleanroom/20260924_191338-1600.jpg" data-lightbox="cleanroom">
+            <img src="images/Activities/web/cleanroom/20260924_191338-800.jpg" srcset="images/Activities/web/cleanroom/20260924_191338-800.jpg 800w, images/Activities/web/cleanroom/20260924_191338-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Two students following the build instructions" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/cleanroom/20260924_202915-1600.jpg" data-lightbox="cleanroom">
+            <img src="images/Activities/web/cleanroom/20260924_202915-800.jpg" srcset="images/Activities/web/cleanroom/20260924_202915-800.jpg 800w, images/Activities/web/cleanroom/20260924_202915-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="A student testing a finished cleanroom model with a fan" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp reveal exp--flip" id="laser" aria-labelledby="laser-title" style="--accent:#ff8a3d;--accent-rgb:255, 138, 61">
+      <div class="exp-grid">
+        <a class="ph ph-feature" href="images/Activities/web/laser/20261001_194408-1600.jpg" data-lightbox="laser">
+            <img src="images/Activities/web/laser/20261001_194408-800.jpg" srcset="images/Activities/web/laser/20261001_194408-800.jpg 800w, images/Activities/web/laser/20261001_194408-1600.jpg 1600w" sizes="(max-width: 768px) 100vw, 58vw" alt="Students and the instructor aligning parts on the laser bench" loading="lazy" decoding="async">
+          </a>
+        <div class="exp-card">
+          <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="10" width="6" height="4" rx="1"/><path d="M8.5 12h7.5l3.5-3.5"/><path d="M17.5 6.5l3 3"/><circle cx="21" cy="5.5" r="1"/></svg><span>Lasers &amp; Optics</span></p>
+          <h2 id="laser-title">Steering a Laser Beam</h2>
+          <p>Lasers are used everywhere in technology, from barcode scanners to the machines that make computer chips. Working in small teams, students placed mirrors and other optical parts on a laser bench and adjusted them to guide a laser beam exactly where they wanted it to go. It is careful, hands-on work, and the same skill technicians use to set up real optical equipment.</p>
+        </div>
+        <div class="exp-thumbs">
+          <a class="ph ph-thumb" href="images/Activities/web/laser/20261001_193759-1600.jpg" data-lightbox="laser">
+            <img src="images/Activities/web/laser/20261001_193759-800.jpg" srcset="images/Activities/web/laser/20261001_193759-800.jpg 800w, images/Activities/web/laser/20261001_193759-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Teams working at two laser benches" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/laser/20261001_193837-1600.jpg" data-lightbox="laser">
+            <img src="images/Activities/web/laser/20261001_193837-800.jpg" srcset="images/Activities/web/laser/20261001_193837-800.jpg 800w, images/Activities/web/laser/20261001_193837-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="The instructor holding up an optical part to show the class" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/laser/20261001_193451-1600.jpg" data-lightbox="laser">
+            <img src="images/Activities/web/laser/20261001_193451-800.jpg" srcset="images/Activities/web/laser/20261001_193451-800.jpg 800w, images/Activities/web/laser/20261001_193451-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="A student placing a part on the optical breadboard" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/laser/20261001_201122-1600.jpg" data-lightbox="laser">
+            <img src="images/Activities/web/laser/20261001_201122-800.jpg" srcset="images/Activities/web/laser/20261001_201122-800.jpg 800w, images/Activities/web/laser/20261001_201122-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Two students lining up a laser on the bench" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp reveal" id="vacuum" aria-labelledby="vacuum-title" style="--accent:#8fa2ff;--accent-rgb:143, 162, 255">
+      <div class="exp-grid">
+        <a class="ph ph-feature" href="images/Activities/web/vacuum/IMG_1274-1600.jpg" data-lightbox="vacuum">
+            <img src="images/Activities/web/vacuum/IMG_1274-800.jpg" srcset="images/Activities/web/vacuum/IMG_1274-800.jpg 800w, images/Activities/web/vacuum/IMG_1274-1600.jpg 1600w" sizes="(max-width: 768px) 100vw, 58vw" alt="A student tightening a fitting on the vacuum pump" loading="lazy" decoding="async">
+          </a>
+        <div class="exp-card">
+          <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5"/><path d="M3.5 16h17v2.5h-17z"/><path d="M12 18.5V21M9 21h6"/></svg><span>Vacuum Systems</span></p>
+          <h2 id="vacuum-title">Building a Vacuum System</h2>
+          <p>Many steps in chip making happen inside a vacuum, a space with almost all the air pumped out. Wearing gloves, students connected a pump, valves, and a glass bell jar into a working vacuum system and watched the pressure gauge drop as the air was removed. They also learned how a small leak can stop the system from working, and how to find it.</p>
+        </div>
+        <div class="exp-thumbs">
+          <a class="ph ph-thumb" href="images/Activities/web/vacuum/20261008_184241-1600.jpg" data-lightbox="vacuum">
+            <img src="images/Activities/web/vacuum/20261008_184241-800.jpg" srcset="images/Activities/web/vacuum/20261008_184241-800.jpg 800w, images/Activities/web/vacuum/20261008_184241-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="The class gathered around the vacuum system parts" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/vacuum/IMG_1270-1600.jpg" data-lightbox="vacuum">
+            <img src="images/Activities/web/vacuum/IMG_1270-800.jpg" srcset="images/Activities/web/vacuum/IMG_1270-800.jpg 800w, images/Activities/web/vacuum/IMG_1270-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Students in gloves assembling the vacuum trainer" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/vacuum/20261008_185440-1600.jpg" data-lightbox="vacuum">
+            <img src="images/Activities/web/vacuum/20261008_185440-800.jpg" srcset="images/Activities/web/vacuum/20261008_185440-800.jpg 800w, images/Activities/web/vacuum/20261008_185440-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Students connecting the vacuum pump and valves" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/vacuum/20261008_191904-1600.jpg" data-lightbox="vacuum">
+            <img src="images/Activities/web/vacuum/20261008_191904-800.jpg" srcset="images/Activities/web/vacuum/20261008_191904-800.jpg 800w, images/Activities/web/vacuum/20261008_191904-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Students watching the bell jar during a pump-down" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp reveal exp--flip exp--3" id="fiber" aria-labelledby="fiber-title" style="--accent:#3fe0c0;--accent-rgb:63, 224, 192">
+      <div class="exp-grid">
+        <a class="ph ph-feature" href="images/Activities/web/fiber/20261022_194233-1600.jpg" data-lightbox="fiber">
+            <img src="images/Activities/web/fiber/20261022_194233-800.jpg" srcset="images/Activities/web/fiber/20261022_194233-800.jpg 800w, images/Activities/web/fiber/20261022_194233-1600.jpg 1600w" sizes="(max-width: 768px) 100vw, 58vw" alt="The instructor showing students the fiber-optic equipment case" loading="lazy" decoding="async">
+          </a>
+        <div class="exp-card">
+          <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 15c3-6 6 6 9.5 0s6.5 6 9.5 0"/><circle cx="7" cy="13.5" r="1"/><circle cx="16.5" cy="13.5" r="1"/></svg><span>Fiber Optics</span></p>
+          <h2 id="fiber-title">Exploring Light and Fiber Optics</h2>
+          <p>Fiber-optic cables carry information as pulses of light, which is how most internet traffic travels around the world. The instructor showed students real fiber-optic equipment and explained how the cables are made and how they guide light over long distances. Students also used polarizing filters to see how light can be blocked or let through depending on its direction.</p>
+        </div>
+        <div class="exp-thumbs">
+          <a class="ph ph-thumb" href="images/Activities/web/fiber/20261022_193740-1600.jpg" data-lightbox="fiber">
+            <img src="images/Activities/web/fiber/20261022_193740-800.jpg" srcset="images/Activities/web/fiber/20261022_193740-800.jpg 800w, images/Activities/web/fiber/20261022_193740-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Students looking at the fiber-optic demonstration" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/fiber/20261022_193813-1600.jpg" data-lightbox="fiber">
+            <img src="images/Activities/web/fiber/20261022_193813-800.jpg" srcset="images/Activities/web/fiber/20261022_193813-800.jpg 800w, images/Activities/web/fiber/20261022_193813-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="The instructor explaining how fiber-optic cable guides light" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/fiber/20261022_194300-1600.jpg" data-lightbox="fiber">
+            <img src="images/Activities/web/fiber/20261022_194300-800.jpg" srcset="images/Activities/web/fiber/20261022_194300-800.jpg 800w, images/Activities/web/fiber/20261022_194300-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="Students taking a closer look at the fiber-optic kit" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp reveal" id="litho" aria-labelledby="litho-title" style="--accent:#c08cff;--accent-rgb:192, 140, 255">
+      <div class="exp-grid">
+        <a class="ph ph-feature" href="images/Activities/web/litho/20261029_192631-1600.jpg" data-lightbox="litho">
+            <img src="images/Activities/web/litho/20261029_192631-800.jpg" srcset="images/Activities/web/litho/20261029_192631-800.jpg 800w, images/Activities/web/litho/20261029_192631-1600.jpg 1600w" sizes="(max-width: 768px) 100vw, 58vw" alt="A student exposing a coated slide under a UV lamp" loading="lazy" decoding="async">
+          </a>
+        <div class="exp-card">
+          <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5v3M6.5 4.5l1.5 2.5M17.5 4.5L16 7"/><rect x="6" y="8" width="12" height="2.5" rx=".5"/><ellipse cx="12" cy="17" rx="8" ry="3"/><path d="M9 16.5h2M13 16.5h2M10.5 18h3"/></svg><span>Photolithography</span></p>
+          <h2 id="litho-title">Printing Patterns With Light</h2>
+          <p>Tiny circuit designs are printed onto computer chips using light, a process called photolithography. In lab coats and gloves, students tried a simple version: they coated glass slides on a homemade spinner built from a computer fan, then shone UV light through a stencil to print a pattern. It is the same basic idea that chip factories use to print billions of tiny parts.</p>
+        </div>
+        <div class="exp-thumbs">
+          <a class="ph ph-thumb" href="images/Activities/web/litho/20261029_190845-1600.jpg" data-lightbox="litho">
+            <img src="images/Activities/web/litho/20261029_190845-800.jpg" srcset="images/Activities/web/litho/20261029_190845-800.jpg 800w, images/Activities/web/litho/20261029_190845-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="A student coating a glass slide at the lab bench" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/litho/20261029_191516-1600.jpg" data-lightbox="litho">
+            <img src="images/Activities/web/litho/20261029_191516-800.jpg" srcset="images/Activities/web/litho/20261029_191516-800.jpg 800w, images/Activities/web/litho/20261029_191516-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="The homemade spin coater built from a computer fan" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/litho/20261029_193510-1600.jpg" data-lightbox="litho">
+            <img src="images/Activities/web/litho/20261029_193510-800.jpg" srcset="images/Activities/web/litho/20261029_193510-800.jpg 800w, images/Activities/web/litho/20261029_193510-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="A student placing a slide under the UV lamp" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-thumb" href="images/Activities/web/litho/20261029_191550-1600.jpg" data-lightbox="litho">
+            <img src="images/Activities/web/litho/20261029_191550-800.jpg" srcset="images/Activities/web/litho/20261029_191550-800.jpg 800w, images/Activities/web/litho/20261029_191550-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 20vw" alt="A student in a lab coat during the lab" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field Trips & Industry Visits. To add another trip, copy the <article class="trip"> block. -->
+    <section class="field-trips reveal" id="field-trips" aria-labelledby="field-trips-title" style="--accent:#f6c342;--accent-rgb:246, 195, 66">
+      <div class="ft-head">
+        <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9.5 20v-6h5v6"/></svg><span>Field Trips &amp; Industry Visits</span></p>
+        <h2 class="ft-title" id="field-trips-title">Field Trips &amp; Industry Visits</h2>
+      </div>
+
+      <!-- November 5, 2026: Cornell NanoScale Science and Technology Facility (confirmed) -->
+      <article class="trip" id="trip-2026-11-05">
+        <div class="exp-card trip-card">
+            <p class="trip-meta">November 5, 2026 &middot; Cornell NanoScale Science and Technology Facility (CNF), Ithaca, NY</p>
+            <h3>Inside a Real Chip-Making Cleanroom: Cornell NanoScale Facility</h3>
+          <p>Q-SUCCEED-North students traveled to Cornell University to visit a cleanroom where real computer chips and tiny devices are made. After an introductory talk, they got a close look at a silicon wafer, the thin disk that chips are built on, and a photomask, a glass plate that works like a stencil for circuit designs.</p>
+          <p>Students then put on full-body cleanroom suits and toured the facility with their guide, Tom Pennell, CNF&rsquo;s education and outreach coordinator, learning how the cleanroom is kept almost free of dust and why that matters for making chips. He walked them through photolithography step by step: preparing the wafer, spinning on a thin light-sensitive coating, and shining UV light through the photomask to print tiny circuit patterns onto the silicon. In the yellow-lit part of the cleanroom, where the light is kept yellow so it won&rsquo;t spoil the coating, they saw how masks are lined up with wafers under microscopes.</p>
+          <p>It was the same process students had tried in their own lab, where they coated glass slides on a homemade spinner and used a UV lamp to print a pattern. At Cornell, they saw how it&rsquo;s done with professional equipment.</p>
+          </div>
+        <div class="trip-mosaic">
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_155545-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_155545-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_155545-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_155545-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="A presenter giving an introductory talk before the tour" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_154139-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_154139-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_154139-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_154139-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="A silicon wafer in its carrier case" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_154238-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_154238-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_154238-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_154238-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="A photomask held up to the light" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_161747-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_161747-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_161747-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_161747-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="Students putting on full-body cleanroom suits" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_162131-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_162131-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_162131-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_162131-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="Students in cleanroom suits on the lab floor" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_162237-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_162237-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_162237-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_162237-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="The guide holding up a wafer inside the cleanroom" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_162511-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_162511-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_162511-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_162511-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="The guide showing students a piece of equipment" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_164140-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_164140-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_164140-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_164140-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="Students walking through the cleanroom" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_164220-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_164220-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_164220-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_164220-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="Students in the yellow-lit room of the cleanroom" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_164455-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_164455-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_164455-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_164455-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="The guide working at a station in the yellow-lit room" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/20261105_165200-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/20261105_165200-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/20261105_165200-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/20261105_165200-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="Students looking at equipment in the yellow-lit room" loading="lazy" decoding="async">
+          </a>
+          <a class="ph ph-tile" href="images/Activities/web/field-trips/2026-11-05/Dofoto_20261105_202725379-1600.jpg" data-lightbox="trip-2026-11-05">
+            <img src="images/Activities/web/field-trips/2026-11-05/Dofoto_20261105_202725379-800.jpg" srcset="images/Activities/web/field-trips/2026-11-05/Dofoto_20261105_202725379-800.jpg 800w, images/Activities/web/field-trips/2026-11-05/Dofoto_20261105_202725379-1600.jpg 1600w" sizes="(max-width: 768px) 50vw, 25vw" alt="Two students smiling in their cleanroom suits" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src="https://ext.same-assets.com/3633044319/4209634519.png" alt="Syracuse University iSchool" class="footer-logo" onerror="this.style.display='none'">
+        <p class="footer-brand">Q-SUCCEED-North</p>
+        <p>Quantum and Semiconductor<br>Upskilling for Career Change</p>
+        <!-- [PLACEHOLDER] social links -->
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </a>
+          <a href="mailto:anghimir@syr.edu" class="social-icon" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="north.html">Home</a>
+        <a href="north.html#about">About Program</a>
+        <a href="activities.html">Activities &amp; Experiments</a>
+        <a href="north.html#team">Our Team</a>
+        <a href="#contact">Contact Us</a>
+        <a href="../index.html">Q-SUCCEED-CNY (Syracuse)</a>
+        <a href="../news.html">News</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <p><strong>Project Coordinator</strong></p>
+        <p>Email: <a href="mailto:anghimir@syr.edu" class="inline-link">anghimir@syr.edu</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright &copy; 2026 Q-SUCCEED-North | Jefferson Community College | Syracuse University | All Rights Reserved
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" type="button" aria-label="Back to top">&uarr;</button>
+
+  <!-- Photo viewer -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+    <img alt="">
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">&rsaquo;</button>
+  </div>
+
+  <script src="north.js"></script>
+</body>
+</html>

@@ -190,6 +190,11 @@
       .desktop-nav { display: none; }
       .hamburger { display: flex; }
     }
+    /* ===== PROGRAM LOCATION LABELS ===== */
+    .program-label { display: inline-block; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .program-label--cny { background: rgba(227,101,21,0.14); border: 1px solid rgba(227,101,21,0.4); color: #ffb98a; }
+    .program-label--north { background: rgba(63,216,255,0.12); border: 1px solid rgba(63,216,255,0.4); color: #8be8ff; }
+    .program-label--both { background: rgba(165,180,252,0.14); border: 1px solid rgba(165,180,252,0.4); color: #c7d2fe; }
   </style>
 </head>
 <body>
@@ -206,6 +211,7 @@
     <a href="news.html">News</a>
     <a href="lectures.html">Lectures/Labs</a>
     <a href="about.html">About</a>
+    <a href="north/north.html" title="Q-SUCCEED-North (Watertown, NY)">Watertown</a>
     <a href="contact.html">Contact</a>
     <a href="apply.html">Apply</a>
   </nav>
@@ -221,6 +227,7 @@
     <a href="news.html">News</a>
     <a href="lectures.html">Lectures/Labs</a>
     <a href="about.html">About</a>
+    <a href="north/north.html" title="Q-SUCCEED-North (Watertown, NY)">Watertown</a>
     <a href="contact.html">Contact</a>
     <a href="apply.html">Apply</a>
   </nav>
@@ -257,6 +264,9 @@
     </div>
     <div class="card-grid">
 
+      <!-- Program labels: add data-program="cny" (Syracuse), "north" (Watertown) or "both" to an event card,
+           plus the matching <span class="program-label program-label--cny|north|both"> in its card-body.
+           Give a card an id (e.g. id="my-event") so other pages can link to it: news.html#my-event opens the card. -->
       <!-- SEMICON West 2026 -->
       <article class="event-card" onclick="openEvent(this)"
         data-chip="Conference" data-title="Q-SUCCEED Represents Syracuse University at SEMICON West 2026"
@@ -345,7 +355,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
     <div class="card-grid">
 
       <!-- Research and Technology Forum -->
-      <article class="event-card" onclick="openEvent(this)"
+      <article class="event-card" onclick="openEvent(this)" data-program="cny"
         data-chip="Forum" data-title="Research and Technology Forum"
         data-date="April 1, 2026" data-location="Downtown Syracuse, NY"
         data-desc="The Q-SUCCEED-CNY team delivered a presentation titled 'How Q-SUCCEED-CNY Connects Local Residents to Emerging Semiconductor and Quantum Career Opportunities' at the April Research and Technology Forum in Downtown Syracuse. The event attracted a diverse audience that included industry representatives, community organizations, students, and members of the broader community. The presentation emphasized the importance of cross-sector collaboration — bringing together stakeholders with the shared goal of building a strong regional semiconductor ecosystem capable of serving both the semiconductor industry and its adjacent sectors."
@@ -357,6 +367,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
           <img src="Qsucceed photos/IMG_6581.jpg" alt="Research and Technology Forum">
         </div>
         <div class="card-body">
+          <span class="program-label program-label--cny">Q-SUCCEED-CNY · Syracuse, NY</span>
           <h3>Research and Technology Forum — Syracuse</h3>
           <p>Q-SUCCEED-CNY presented on connecting local residents to semiconductor and quantum career opportunities at the April forum in Downtown Syracuse.</p>
           <div class="card-tags"><span class="card-tag">Presentation</span><span class="card-tag">Community</span><span class="card-tag">Syracuse</span></div>
@@ -364,7 +375,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
       </article>
 
       <!-- Syracuse.com Feature Article -->
-      <article class="event-card" onclick="openEvent(this)"
+      <article class="event-card" onclick="openEvent(this)" data-program="cny"
         data-chip="Media" data-title="Syracuse.com Feature Article"
         data-date="March 17, 2026" data-location="Syracuse, NY"
         data-desc="The Q-SUCCEED-CNY program was promoted to a broader community audience through a feature article published on Syracuse.com, in which Dr. Hasanovic spoke about the program, the ongoing cohort in partnership with SCSD Adult Education, and plans for future cohorts. The article highlighted that the program pays participants $2,400 to spend a semester exploring careers in semiconductors, quantum technologies, and photonics, and is intentionally designed to be beginner-friendly — targeting adults with no prior technical background who are considering a career change. The program is also coordinating with other state workforce initiatives to support broader regional growth in the emerging technology sector."
@@ -377,6 +388,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
           <img src="Qsucceed photos/syracuse.png" alt="Syracuse.com Feature">
         </div>
         <div class="card-body">
+          <span class="program-label program-label--cny">Q-SUCCEED-CNY · Syracuse, NY</span>
           <h3>Syracuse.com Feature Article</h3>
           <p>A feature article on Syracuse.com highlighted the Q-SUCCEED-CNY program, its $2,400 stipend for participants, and plans for future cohorts targeting career changers.</p>
           <div class="card-tags"><span class="card-tag">Media</span><span class="card-tag">Syracuse.com</span><span class="card-tag">Outreach</span></div>
@@ -515,7 +527,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
     <div class="card-grid">
 
       <!-- Micron Day — Semiconductor Bakery -->
-      <article class="event-card" onclick="openEvent(this)"
+      <article class="event-card" onclick="openEvent(this)" data-program="cny"
         data-chip="Community Event" data-title="Micron Day — Semiconductor Bakery"
         data-date="Spring 2026" data-location="Syracuse University"
         data-desc="The team participated in Micron Day at Syracuse University, engaging students and community members through an interactive 'Semiconductor Bakery' activity. Visitors decorated cookies to simulate the semiconductor chip fabrication process. They learnt about silicon wafer preparation and masking, as well as deposition, implantation, and wafer dicing into chips. The activity was designed to make complex semiconductor manufacturing concepts accessible and fun for all ages, connecting the science of chip-making to something as familiar as baking cookies. The team also presented a poster highlighting both the Q-SUCCEED-CNY and EdQuantum programs, promoting workforce development opportunities in semiconductor, optics, and quantum technology careers for adult learners and high school students. The event drew strong interest and engagement, with many attendees stopping by the booth to learn about the programs and try the cookie decorating activity."
@@ -527,6 +539,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
           <img src="Qsucceed photos/micronday/img (1).jpeg" alt="Micron Day Semiconductor Bakery">
         </div>
         <div class="card-body">
+          <span class="program-label program-label--cny">Q-SUCCEED-CNY · Syracuse, NY</span>
           <h3>Micron Day — Semiconductor Bakery Outreach</h3>
           <p>The team hosted an interactive "Semiconductor Bakery" at Micron Day, where visitors decorated cookies to simulate the chip fabrication process — from wafer prep to dicing.</p>
           <div class="card-tags"><span class="card-tag">Micron</span><span class="card-tag">Outreach</span><span class="card-tag">Hands-On</span><span class="card-tag">Syracuse U</span></div>
@@ -534,7 +547,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
       </article>
 
       <!-- Quantum Club -->
-      <article class="event-card" onclick="openEvent(this)"
+      <article class="event-card" onclick="openEvent(this)" data-program="cny"
         data-chip="Club Event" data-title="Quantum Club Collaboration — Syracuse University"
         data-date="Spring 2026" data-location="Syracuse University" data-desc=""
         data-photos=""
@@ -545,6 +558,7 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
           <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80" alt="Quantum Club">
         </div>
         <div class="card-body">
+          <span class="program-label program-label--cny">Q-SUCCEED-CNY · Syracuse, NY</span>
           <h3>Quantum Club Collaboration</h3>
           <p>Joint event with SU's Quantum Club.</p>
           <div class="card-tags"><span class="card-tag">Demo</span><span class="card-tag">Quantum</span><span class="card-tag">Syracuse U</span></div>
@@ -738,6 +752,12 @@ Q-SUCCEED's participation in HI-TEC highlighted the importance of affordable, pr
     document.getElementById('eventModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
+  // news.html#card-id opens that event card (used by links from the Watertown page)
+  window.addEventListener('load', () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const card = id && document.getElementById(id);
+    if (card && card.classList.contains('event-card')) { card.scrollIntoView({ block: 'center' }); openEvent(card); }
+  });
   function closeEvent() { document.getElementById('eventModal').classList.remove('open'); document.body.style.overflow = ''; }
 
   /* ── Lightbox ── */
