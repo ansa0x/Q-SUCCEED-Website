@@ -2270,3 +2270,16 @@ img.bench-item {
   background: rgba(227, 101, 21, 0.3);
   box-shadow: 0 0 18px rgba(227, 101, 21, 0.45);
 }
+
+/* Featured area as three portrait photos side by side */
+.ph-tri {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ph-tri .ph-tri-item img,
+.exp-grid .ph-tri .ph-tri-item img {
+  position: static;
+  aspect-ratio: 3 / 4;
+}
