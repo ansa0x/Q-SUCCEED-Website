@@ -2879,8 +2879,8 @@ After the lecture, participants got hands-on experience working with a Vacuum Tr
               font-style: italic;
             "
           >
-            Lectures 1&ndash;6 show photos from both sites. Lectures 7&ndash;8 show
-            stock illustrations of each topic until those sessions take place.
+            Lectures 1&ndash;7 show photos from the sessions. Lecture 8 shows a
+            stock illustration of the topic until that session takes place.
           </p>
           <div
             class="card-grid"
@@ -3036,27 +3036,30 @@ For the lab, participants shone a laser through a double slit and watched a patt
                 <p class="meta-line">November 12, 2026</p>
               </div>
             </article>
-            <!-- Lecture 7: delivered at both Syracuse and Watertown -->
+            <!-- Lecture 7: Syracuse only (no Watertown session) -->
             <article
               class="lecture-card"
               onclick="openLecture(event)"
               data-num="7"
-              data-date="Date TBD"
-              data-desc=""
-              data-sites="Syracuse &amp; Watertown"
-              data-photos=""
+              data-date="November 19, 2026"
+              data-desc="The lecture introduced metal deposition, the step that adds the thin metal layers that act as the “wires” inside a computer chip. Building on photolithography from the previous lecture, participants learned how metal is added to fill the patterns printed with light, one very thin layer at a time, much like spray-painting a car but millions of times thinner. The lecture compared three main methods: thermal evaporation, which heats metal in a vacuum until it turns to vapor; e-beam evaporation, which uses a focused beam of electrons to melt even very hard metals; and sputtering, which uses a plasma to knock metal atoms off a target so they coat the wafer from all directions. It also explained why the surface must be perfectly clean before deposition.
+For the lab, participants explored gold electrodeposition, which uses electricity instead of a vacuum to coat metal onto a surface. Using a battery, alligator clips, and a gold solution, a penny was coated with a thin layer of gold, atom by atom. This hands-on activity showed the same basic chemistry used to gold-plate jewelry and to add copper wiring inside real computer chips."
+              data-sites="Syracuse"
+              data-photo="images/Fall%202026/Lec7/20261119_130120.jpg"
+              data-photos="images/Fall%202026/Lec7/20261119_130120.jpg,images/Fall%202026/Lec7/20261119_123351.jpg,images/Fall%202026/Lec7/20261119_130116.jpg,images/Fall%202026/Lec7/20261119_123900.jpg,images/Fall%202026/Lec7/20261119_124258.jpg,images/Fall%202026/Lec7/20261119_130053.jpg,images/Fall%202026/Lec7/20261119_123847.jpg"
+              data-videos="images/Fall%202026/Lec7/20261119_130139.mp4"
             >
               <div class="card-media">
                 <span class="card-pill">Lecture 7</span
                 ><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg/960px-Setup_to_generate_an_extremely_precise_Wavelength_of_Infrared_light.jpg"
-                  alt="Placeholder: an optical table set up for precision laser measurement"
+                  src="images/Fall%202026/Lec7/20261119_130120.jpg"
+                  alt="Lecture 7"
                 />
               </div>
               <div class="card-meta">
                 <h3>Lecture 7</h3>
-                <p class="card-kicker">Syracuse &amp; Watertown</p>
-                <p class="meta-line">Date TBD</p>
+                <p class="card-kicker">Syracuse</p>
+                <p class="meta-line">November 19, 2026</p>
               </div>
             </article>
             <!-- Lecture 8: delivered at both Syracuse and Watertown -->
@@ -3239,6 +3242,24 @@ For the lab, participants shone a laser through a double slit and watched a patt
             "
             id="lec-photos"
           ></div>
+          <div id="lec-videos-wrap" hidden>
+            <p
+              style="
+                color: #64748b;
+                font-size: 0.85rem;
+                margin: 24px 0 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+              "
+            >
+              🎬 Session Videos
+            </p>
+            <div
+              id="lec-videos"
+              style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px;"
+            ></div>
+          </div>
         </div>
       </div>
     </section>
@@ -3332,11 +3353,26 @@ For the lab, participants shone a laser through a double slit and watched a patt
           grid.innerHTML = `<p style="color:#475569; font-size:0.85rem;">No photos available yet.</p>`;
         }
 
+        // Optional session videos: data-videos="a.mp4,b.mp4"
+        const videos = (card.dataset.videos || "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean);
+        const vWrap = document.getElementById("lec-videos-wrap");
+        document.getElementById("lec-videos").innerHTML = videos
+          .map(
+            (url) =>
+              `<video src="${url}" controls playsinline preload="metadata" style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:8px; background:#0d1226;"></video>`,
+          )
+          .join("");
+        vWrap.hidden = videos.length === 0;
+
         document.getElementById("lectureModal").classList.add("open");
         document.body.style.overflow = "hidden";
       }
 
       function closeLecture() {
+        document.querySelectorAll("#lec-videos video").forEach((v) => v.pause());
         document.getElementById("lectureModal").classList.remove("open");
         document.body.style.overflow = "";
       }

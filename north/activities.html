@@ -277,6 +277,57 @@
       </div>
     </section>
 
+    <!-- Science spotlight (explainer, not a Watertown session): gold plating -->
+    <section class="exp reveal" id="goldplating" aria-labelledby="goldplating-title" style="--accent:#f6c342;--accent-rgb:246, 195, 66">
+      <div class="exp-grid">
+        <div class="ph-feature gold-illus">
+          <svg class="gold-svg" viewBox="0 0 480 300" role="img" aria-label="Illustration of gold electroplating: a battery connected to a penny and a carbon rod in a beaker of gold solution, with gold ions moving onto the penny">
+            <defs>
+              <linearGradient id="goldLiquid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c342" stop-opacity=".35"/><stop offset="1" stop-color="#e3a015" stop-opacity=".18"/></linearGradient>
+              <radialGradient id="penny" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffe08a"/><stop offset=".55" stop-color="#e0a52a"/><stop offset="1" stop-color="#a86b12"/></radialGradient>
+            </defs>
+            <!-- battery -->
+            <rect x="190" y="18" width="100" height="40" rx="6" fill="#0d1640" stroke="#3fd8ff" stroke-width="2"/>
+            <rect x="290" y="30" width="8" height="16" rx="2" fill="#3fd8ff"/>
+            <text x="218" y="44" font-family="Space Grotesk, sans-serif" font-size="15" fill="#eaf0ff">1.5 V</text>
+            <text x="270" y="44" font-family="Space Grotesk, sans-serif" font-size="16" fill="#ff8a3d">+</text>
+            <text x="198" y="44" font-family="Space Grotesk, sans-serif" font-size="16" fill="#3fd8ff">&#8722;</text>
+            <!-- wires -->
+            <path class="wire" d="M190 38H140V140" stroke="#3fd8ff"/>
+            <path class="wire" d="M298 38H340V140" stroke="#ff8a3d"/>
+            <!-- beaker -->
+            <path d="M100 110v150a20 20 0 0 0 20 20h240a20 20 0 0 0 20-20V110" fill="none" stroke="rgba(234,240,255,.55)" stroke-width="3"/>
+            <rect x="103" y="150" width="274" height="127" rx="16" fill="url(#goldLiquid)"/>
+            <path d="M103 150q34-8 68 0t68 0 68 0 68 0" fill="none" stroke="#f6c342" stroke-opacity=".6" stroke-width="2"/>
+            <!-- penny (cathode, -) -->
+            <circle cx="140" cy="205" r="34" fill="url(#penny)" stroke="#ffe08a" stroke-width="2"/>
+            <circle class="glow" cx="140" cy="205" r="40" fill="none" stroke="#f6c342" stroke-width="2"/>
+            <text x="120" y="261" font-family="Space Grotesk, sans-serif" font-size="12" fill="#bcc7ea">penny (&#8722;)</text>
+            <!-- carbon rod (anode, +) -->
+            <rect x="330" y="140" width="20" height="110" rx="4" fill="#2b2f45" stroke="#6b7090"/>
+            <text x="306" y="268" font-family="Space Grotesk, sans-serif" font-size="12" fill="#bcc7ea">carbon (+)</text>
+            <!-- gold ions drifting toward the penny -->
+            <g class="ions" fill="#f6c342">
+              <circle class="ion" cx="300" cy="180" r="5"/><circle class="ion" cx="270" cy="225" r="5" style="animation-delay:-1s"/>
+              <circle class="ion" cx="310" cy="235" r="5" style="animation-delay:-2s"/><circle class="ion" cx="250" cy="190" r="5" style="animation-delay:-2.8s"/>
+              <circle class="ion" cx="285" cy="205" r="5" style="animation-delay:-3.6s"/>
+            </g>
+            <text x="222" y="172" font-family="Space Grotesk, sans-serif" font-size="12" fill="#f6c342">gold ions</text>
+          </svg>
+        </div>
+        <div class="exp-card">
+          <p class="exp-kicker"><svg class="exp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="6"/><path d="M9 13h6M12 10v6"/><path d="M8 3h8"/><path d="M12 3v4"/></svg><span>Science Spotlight</span></p>
+          <h2 id="goldplating-title">How Gold Plating Works</h2>
+          <p>Gold plating uses electricity to coat an object with a thin layer of real gold. The object, like a penny, is dipped into a liquid with gold dissolved in it and connected to a battery. The electric current pulls tiny gold particles in the liquid onto the penny, where they stick and build up a shiny gold coat, atom by atom.</p>
+        </div>
+        <div class="exp-thumbs fact-tiles">
+          <div class="fact-tile"><h3>Why gold?</h3><p>Gold never rusts and carries electricity very well, so it is used on the tiny connectors inside phones, computers, and chips.</p></div>
+          <div class="fact-tile"><h3>Thinner than a hair</h3><p>A gold-plated layer can be thinner than one-hundredth of a human hair, so only a tiny amount of gold is needed.</p></div>
+          <div class="fact-tile"><h3>Same idea in chip factories</h3><p>Electroplating is also how copper wiring is added inside modern computer chips.</p></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Field Trips & Industry Visits. To add another trip, copy the <article class="trip"> block. -->
     <section class="field-trips reveal" id="field-trips" aria-labelledby="field-trips-title" style="--accent:#f6c342;--accent-rgb:246, 195, 66">
       <div class="ft-head">

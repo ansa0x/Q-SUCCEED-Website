@@ -2283,3 +2283,95 @@ img.bench-item {
   position: static;
   aspect-ratio: 3 / 4;
 }
+
+/* Science spotlight: gold plating illustration + fact tiles */
+.gold-illus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 14px;
+  background: radial-gradient(circle at 40% 40%, rgba(246, 195, 66, 0.12), rgba(8, 14, 46, 0.8) 70%);
+}
+
+.gold-svg {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+}
+
+.gold-svg .wire {
+  fill: none;
+  stroke-width: 3;
+  stroke-dasharray: 6 8;
+  animation: wire-flow 1.6s linear infinite;
+}
+
+@keyframes wire-flow {
+  to { stroke-dashoffset: -28; }
+}
+
+.gold-svg .ion {
+  animation: ion-drift 4.5s ease-in infinite;
+}
+
+@keyframes ion-drift {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translate(-130px, 0); opacity: 0; }
+}
+
+.gold-svg .ion:nth-child(2n) { animation-name: ion-drift-2; }
+
+@keyframes ion-drift-2 {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translate(-115px, -20px); opacity: 0; }
+}
+
+.gold-svg .glow {
+  opacity: 0.4;
+  animation: penny-glow 3s ease-in-out infinite;
+}
+
+@keyframes penny-glow {
+  50% { opacity: 0.9; }
+}
+
+.fact-tiles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fact-tile {
+  padding: 16px;
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  border-radius: 12px;
+  background: linear-gradient(160deg, rgba(var(--accent-rgb), 0.1), rgba(8, 14, 46, 0.75) 70%);
+}
+
+.fact-tile h3 {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.fact-tile p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(234, 240, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+  .fact-tiles { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-svg .wire,
+  .gold-svg .ion,
+  .gold-svg .glow { animation: none; }
+  .gold-svg .ion { opacity: 1; }
+}
